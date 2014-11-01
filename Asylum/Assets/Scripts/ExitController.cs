@@ -36,7 +36,10 @@ public class ExitController : MonoBehaviour {
 		coll.transform.position = connectedExit.transform.position;
 
 		connectedExit.GetComponent<ExitController> ().setTriggered(true);
-		connectedExit.transform.parent.GetComponent<TileContainer>().moveCamera ();
+        TileContainer tile = connectedExit.transform.parent.GetComponent<TileContainer>();
+        tile.moveCamera();
+        tile.tileEntered();
+
 		/*if (coll.gameObject.tag == "Line") {
 		}*/
 	}
