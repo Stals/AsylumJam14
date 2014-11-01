@@ -100,7 +100,7 @@ Transform:
   m_GameObject: {fileID: 68680870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00578034669, y: .00578034669, z: .00578034669}
+  m_LocalScale: {x: .00487804879, y: .00487804879, z: .00487804879}
   m_Children:
   - {fileID: 1592736811}
   m_Father: {fileID: 0}
@@ -565,9 +565,9 @@ Rigidbody2D:
     type: 2}
   m_PrefabInternal: {fileID: 1031462293}
   m_GameObject: {fileID: 567122586}
-  m_Mass: 999999
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_Mass: 100
+  m_LinearDrag: 5
+  m_AngularDrag: 0
   m_GravityScale: 0
   m_FixedAngle: 1
   m_IsKinematic: 0
@@ -615,9 +615,9 @@ SpringJoint2D:
   m_ConnectedRigidBody: {fileID: 725214152}
   m_Anchor: {x: 0, y: 0}
   m_ConnectedAnchor: {x: 0, y: 0}
-  m_Distance: 1
-  m_DampingRatio: 0
-  m_Frequency: 1
+  m_Distance: .5
+  m_DampingRatio: 1
+  m_Frequency: 10
 --- !u!1 &725214150
 GameObject:
   m_ObjectHideFlags: 0
@@ -656,12 +656,12 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 1367408849}
   m_GameObject: {fileID: 725214150}
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_LinearDrag: 5
+  m_AngularDrag: 2
   m_GravityScale: 0
-  m_FixedAngle: 1
+  m_FixedAngle: 0
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
 --- !u!58 &725214153
@@ -696,7 +696,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 30
   m_Sprite: {fileID: 21300000, guid: 5af12af921dae4819b2797c5c8ef1d77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &810847385
@@ -841,6 +841,30 @@ Prefab:
       propertyPath: m_ConnectedRigidBody
       value: 
       objectReference: {fileID: 725214152}
+    - target: {fileID: 5000000, guid: b5ad8157ce6164b4b90e8c96762bbf31, type: 2}
+      propertyPath: m_Mass
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: b5ad8157ce6164b4b90e8c96762bbf31, type: 2}
+      propertyPath: m_LinearDrag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: b5ad8157ce6164b4b90e8c96762bbf31, type: 2}
+      propertyPath: m_AngularDrag
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 23100000, guid: b5ad8157ce6164b4b90e8c96762bbf31, type: 2}
+      propertyPath: m_Distance
+      value: .5
+      objectReference: {fileID: 0}
+    - target: {fileID: 23100000, guid: b5ad8157ce6164b4b90e8c96762bbf31, type: 2}
+      propertyPath: m_DampingRatio
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 23100000, guid: b5ad8157ce6164b4b90e8c96762bbf31, type: 2}
+      propertyPath: m_Frequency
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b5ad8157ce6164b4b90e8c96762bbf31, type: 2}
   m_RootGameObject: {fileID: 567122586}
@@ -983,6 +1007,26 @@ Prefab:
     - target: {fileID: 400000, guid: be83c848c2a1448bca193346d01b4431, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: be83c848c2a1448bca193346d01b4431, type: 2}
+      propertyPath: m_AngularDrag
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: be83c848c2a1448bca193346d01b4431, type: 2}
+      propertyPath: m_LinearDrag
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: be83c848c2a1448bca193346d01b4431, type: 2}
+      propertyPath: m_Interpolate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5000000, guid: be83c848c2a1448bca193346d01b4431, type: 2}
+      propertyPath: m_FixedAngle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21200000, guid: be83c848c2a1448bca193346d01b4431, type: 2}
+      propertyPath: m_SortingOrder
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be83c848c2a1448bca193346d01b4431, type: 2}
