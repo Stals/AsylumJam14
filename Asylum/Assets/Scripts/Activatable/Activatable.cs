@@ -3,8 +3,16 @@ using System.Collections;
 
 public class Activatable : MonoBehaviour {
 
+    [SerializeField]
+    bool isPressable = true; // if false - just entering will triger
+
+    [SerializeField]
+    bool isOnce = true; // activatable only once
+
     bool isTriggered = false;
     GameObject img;
+
+    bool wasActivated = false;
 
 	// Use this for initialization
 	void Start () {
@@ -24,17 +32,32 @@ public class Activatable : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-
-        if (isTriggered)
+        if (wasActivated)
         {
-            setImageOpactiy(1f);
-            if (Input.GetKey(KeyCode.Space))
+            setImageOpactiy(0f);
+            return;
+        }
+
+        if (isPressable)
+        {
+            if (isTriggered)
             {
-                activate();
+                setImageOpactiy(1f);
+                if (Input.GetKey(KeyCode.Space))
+                {
+                    wasActivated = true;
+                    activate();
+                }
+            } else
+            {
+                setImageOpactiy(0.5f);
             }
         } else
         {
-            setImageOpactiy(0.5f);
+            if(isTriggered){
+                wasActivated = true;
+                activate();
+            }
         }
 	}
 
