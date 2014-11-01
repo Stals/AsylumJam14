@@ -61,12 +61,12 @@ public class PatrolingEnemyController : MonoBehaviour {
         if (EnemyNearby() && DistanceIsClose())
         {
             CurrentState = State.chasingPlayer;
-        } else if (!CanResumeWalk())
-        {
-            CurrentState = State.goingBackToRoute;
-        } else
+        } else if (CanResumeWalk())
         {
             CurrentState = State.walking;
+        } else
+        {
+            CurrentState = State.goingBackToRoute;
         }
 
         if (CurrentState == State.chasingPlayer)
@@ -84,12 +84,14 @@ public class PatrolingEnemyController : MonoBehaviour {
     {
         Vector3 vecToEnemy = enemyPos - transform.position;
         transform.position +=  myMoveBehavior.speed * 1.0f / 60.0f * vecToEnemy.normalized;
+        transform.rotation = Quaternion.LookRotation(vecToEnemy);
     }
 
     void ReturnToRoute()
     {
         Vector3 vecToRoute = myCachePos - transform.position;
         transform.position +=  myMoveBehavior.speed * 1.0f / 60.0f * vecToRoute.normalized;
+        transform.rotation = Quaternion.LookRotation(vecToRoute);
     }
 
     bool CanResumeWalk()
