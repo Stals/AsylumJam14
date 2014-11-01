@@ -1,14 +1,52 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+public interface State
+{
+    void Action(PatrolingEnemyController me);
+}
+
+class Walking : State
+{
+    public void Action(PatrolingEnemyController me)
+    {
+        if (me.EnemyNearby() && me.DistanceIsClose())
+        {
+            me.myCachePos = me.transform.position;
+            me.myMoveBehavior.Pause();
+            me.CurrentState = PatrolingEnemyController.StatesArray[(int)PatrolingEnemyController.States.chasingPlayer];
+        }
+    }
+}
+
+class ChasingEnemy : State
+{
+    public void Action(PatrolingEnemyController me)
+    {
+        me.ChasePlayer();
+        if (!me.DistanceIsClose()||(!me.EnemyNearby()))
+        {
+            me.CurrentState = PatrolingEnemyController.StatesArray[(int)PatrolingEnemyController.States.returningToRoute];
+        }
+    }
+}
+
+class ReturningToRoute : State
+{
+    public void Action(PatrolingEnemyController me)
+    {
+        me.ReturnToRoute();
+        if (me.CanResumeWalk())
+        {
+            me.myMoveBehavior.Resume();
+            me.CurrentState = PatrolingEnemyController.StatesArray[(int)PatrolingEnemyController.States.walking];
+        }
+    }
+}
+
 public class PatrolingEnemyController : MonoBehaviour {
 
-	enum State
-	{
-		walking,
-		chasingPlayer,
-        goingBackToRoute
-	}
+	
 
 	[SerializeField]
 	float agroRadius = 1.0f;
@@ -21,80 +59,56 @@ public class PatrolingEnemyController : MonoBehaviour {
 
 	State currentState;
 
-	Vector3 enemyPos = new Vector3();
-    Vector3 myCachePos = new Vector3();
+	public Vector3 enemyPos = new Vector3();
+    public Vector3 myCachePos = new Vector3();
 
-	hoMove myMoveBehavior;
+    public enum States
+    {
+        walking,
+        chasingPlayer,
+        returningToRoute
+    }
 
-    State CurrentState
+    public static State[] StatesArray = new State[]{new Walking(), new ChasingEnemy(), new ReturningToRoute()};
+
+	public hoMove myMoveBehavior;
+
+    public State CurrentState
     {
         get { return currentState;}
         set
-        {
-            if (value != currentState)
-            {
-                if (value == State.walking)
-                {
-                    myMoveBehavior.Resume();
-                }
-
-                if (value == State.chasingPlayer)
-                {
-                    myCachePos = transform.position;
-                    myMoveBehavior.Pause();
-                }
-
-                currentState = value;
-            }
+        {               
+            currentState = value;
         }
     }
 
 
 	// Use this for initialization
 	void Start () {
-		currentState = State.walking;
+		currentState = StatesArray[(int)States.walking];
 		myMoveBehavior = GetComponent<hoMove> ();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        if (EnemyNearby() && DistanceIsClose())
-        {
-            CurrentState = State.chasingPlayer;
-        } else if (CanResumeWalk())
-        {
-            CurrentState = State.walking;
-        } else
-        {
-            CurrentState = State.goingBackToRoute;
-        }
-
-        if (CurrentState == State.chasingPlayer)
-        {
-            ChasePlayer();
-        }
-
-        if (CurrentState == State.goingBackToRoute)
-        {
-            ReturnToRoute();
-        }
+        currentState.Action(this);
     }
 
-    void ChasePlayer()
+    public void ChasePlayer()
     {
         Vector3 vecToEnemy = enemyPos - transform.position;
         transform.position +=  myMoveBehavior.speed * 1.0f / 60.0f * vecToEnemy.normalized;
         transform.rotation = Quaternion.LookRotation(vecToEnemy);
     }
 
-    void ReturnToRoute()
+    public void ReturnToRoute()
     {
         Vector3 vecToRoute = myCachePos - transform.position;
         transform.position +=  myMoveBehavior.speed * 1.0f / 60.0f * vecToRoute.normalized;
         transform.rotation = Quaternion.LookRotation(vecToRoute);
     }
 
-    bool CanResumeWalk()
+    public bool CanResumeWalk()
     {
         Vector3 vecToRoute = myCachePos - transform.position;
         if (vecToRoute.magnitude < resumeWalkRadius)
@@ -106,7 +120,7 @@ public class PatrolingEnemyController : MonoBehaviour {
         }
     }
 
-	bool EnemyNearby()
+	public bool EnemyNearby()
 	{
 		if (Vector3.Distance (Game.Instance.getManager().player.transform.position, transform.position) < agroRadius) 
 		{
@@ -122,7 +136,7 @@ public class PatrolingEnemyController : MonoBehaviour {
 		return false;
 	}
 
-	bool DistanceIsClose()
+	public bool DistanceIsClose()
 	{
 
         float length = float.MaxValue;
