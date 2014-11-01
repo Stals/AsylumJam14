@@ -29,6 +29,11 @@ public class WalkingPlayerController : MonoBehaviour {
         updateMovment();
     }
 
+    TileContainer getCurrentTile()
+    {
+        return transform.parent.GetComponent<TileContainer>();
+    }
+
     void updateMovment()
     {
 //        PlayerContoller playerController = Game.Instance.getPlayerShip().GetComponent<PlayerContoller>();
