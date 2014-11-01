@@ -9,9 +9,9 @@ public enum LevelState{
 public class GameManager : MonoBehaviour {
 
     [SerializeField]
-    GameObject player;
+    public GameObject player;
 	[SerializeField]
-    GameObject brother;
+    public GameObject brother;
 
     [SerializeField]
     public GameObject activatableImagePrefab;
