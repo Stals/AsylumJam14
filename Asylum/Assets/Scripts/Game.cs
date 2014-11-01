@@ -19,12 +19,24 @@ public class Game  {
 	}
 
 	GameManager manager;
+    bool controlsEnabled;
 
 
 	public void init(GameManager _manager)
 	{
 		manager = _manager;
+        controlsEnabled = true;
 	}
+
+    public void setControlsEnabled(bool e)
+    {
+        controlsEnabled = e;
+    }
+
+    public bool isControlsEnabled()
+    {
+        return controlsEnabled;
+    }
 
 	public GameManager getManager()
 	{

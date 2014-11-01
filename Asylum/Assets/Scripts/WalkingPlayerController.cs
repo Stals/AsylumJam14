@@ -26,7 +26,10 @@ public class WalkingPlayerController : MonoBehaviour {
     void FixedUpdate()
     {
         currentPosition = this.transform.position;
-        updateMovment();
+        if (Game.Instance.isControlsEnabled())
+        {
+            updateMovment();
+        }
     }
 
     TileContainer getCurrentTile()

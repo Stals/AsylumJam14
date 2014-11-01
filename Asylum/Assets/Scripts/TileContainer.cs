@@ -37,9 +37,10 @@ public class TileContainer : MonoBehaviour {
 
     public IEnumerator startCutscene(float delay){
         _delay += delay;
-
+  
         yield return new WaitForSeconds(_delay);
         // disable input
+        Game.Instance.setControlsEnabled(false);
         // show borders
     }
 
@@ -48,6 +49,7 @@ public class TileContainer : MonoBehaviour {
         yield return new WaitForSeconds(_delay);
         _delay = 0;
         // enable input
+        Game.Instance.setControlsEnabled(true);
     }
 
 }
