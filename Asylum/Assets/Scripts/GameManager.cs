@@ -24,6 +24,9 @@ public class GameManager : MonoBehaviour {
 
     UILabel speechLabel;
 
+    [SerializeField]
+    GameObject blackBorders;
+
 	//[SerializeField]
 	//GameOverController gameOverController;
     
@@ -62,5 +65,10 @@ public class GameManager : MonoBehaviour {
         Transform panelTarget = speaker.GetComponentInChildren<Transform>();
         speechPanel.target = speaker.transform;
         speechLabel.text = text;
+    }
+
+    public void setBordersVisible(bool v)
+    {
+        blackBorders.SetActive(v);
     }
 }

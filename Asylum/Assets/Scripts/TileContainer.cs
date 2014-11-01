@@ -42,6 +42,7 @@ public class TileContainer : MonoBehaviour {
         // disable input
         Game.Instance.setControlsEnabled(false);
         // show borders
+        Game.Instance.getManager().setBordersVisible(true);
     }
 
     public IEnumerator endCutscene(float delay){
@@ -50,6 +51,8 @@ public class TileContainer : MonoBehaviour {
         _delay = 0;
         // enable input
         Game.Instance.setControlsEnabled(true);
+        // hide borders
+        Game.Instance.getManager().setBordersVisible(false);
     }
 
 }
