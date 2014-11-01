@@ -3,6 +3,8 @@ using System.Collections;
 
 public class TileContainer : MonoBehaviour {
 
+
+    float _delay = 0;
 	// Use this for initialization
 	void Start () {
 	
@@ -27,7 +29,25 @@ public class TileContainer : MonoBehaviour {
     }
 
     public IEnumerator say(string text, float delay, GameObject speaker){
-        yield return new WaitForSeconds(delay);
-        Game.Instance.getManager().Speak(text, delay, speaker);
+        _delay += delay;
+
+        yield return new WaitForSeconds(_delay);
+        Game.Instance.getManager().Speak(text, 0, speaker);
     }
+
+    public IEnumerator startCutscene(float delay){
+        _delay += delay;
+
+        yield return new WaitForSeconds(_delay);
+        // disable input
+        // show borders
+    }
+
+    public IEnumerator endCutscene(float delay){
+        _delay += delay;
+        yield return new WaitForSeconds(_delay);
+        _delay = 0;
+        // enable input
+    }
+
 }

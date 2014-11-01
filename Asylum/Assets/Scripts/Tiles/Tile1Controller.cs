@@ -20,13 +20,13 @@ public class Tile1Controller : TileContainer {
 
         // не находит потому что ищет еще в момент создания GameMAnager'a
 
-        float delay = 0.5f;
-
-        StartCoroutine(say("hello brother", delay, player));
-        StartCoroutine(say("hi", delay+1f, brother));
-        StartCoroutine(say("how are you", delay+2f, player));
-        StartCoroutine(say("fine thanks", delay+3f, brother));
-        StartCoroutine(say("", delay+4f, brother));
+        StartCoroutine(startCutscene(0));
+        StartCoroutine(say("hello brother", 1f, player));
+        StartCoroutine(say("hi", 1f, brother));
+        StartCoroutine(say("how are you", 1f, player));
+        StartCoroutine(say("fine thanks", 1f, brother));
+        StartCoroutine(say("", 1f, brother));
+        StartCoroutine(endCutscene(1f));
     }
     
     public override void darkWorldEntered()
