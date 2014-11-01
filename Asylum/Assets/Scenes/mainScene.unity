@@ -100,7 +100,7 @@ Transform:
   m_GameObject: {fileID: 68680870}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: .00578034669, y: .00578034669, z: .00578034669}
+  m_LocalScale: {x: .00440528616, y: .00440528616, z: .00440528616}
   m_Children:
   - {fileID: 1592736811}
   m_Father: {fileID: 0}
@@ -1048,7 +1048,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 9466d33788d074f33aa3c68fe4fa5fdc, type: 2}
   m_PrefabInternal: {fileID: 1704017931}
   m_GameObject: {fileID: 810847385}
-  m_LocalRotation: {x: 0, y: 0, z: -.707106829, w: .707106709}
+  m_LocalRotation: {x: 0, y: 0, z: -.707106888, w: .707106769}
   m_LocalPosition: {x: -4.65531397, y: .118456721, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1639,7 +1639,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 9466d33788d074f33aa3c68fe4fa5fdc, type: 2}
   m_PrefabInternal: {fileID: 2004521382}
   m_GameObject: {fileID: 1260465733}
-  m_LocalRotation: {x: 0, y: 0, z: -.707106829, w: .707106709}
+  m_LocalRotation: {x: 0, y: 0, z: -.707106888, w: .707106769}
   m_LocalPosition: {x: 4.31403446, y: -.161560059, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -1733,7 +1733,7 @@ Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 9466d33788d074f33aa3c68fe4fa5fdc, type: 2}
   m_PrefabInternal: {fileID: 183325326}
   m_GameObject: {fileID: 1407583211}
-  m_LocalRotation: {x: 0, y: 0, z: -.707106829, w: .707106709}
+  m_LocalRotation: {x: 0, y: 0, z: -.707106888, w: .707106769}
   m_LocalPosition: {x: -4.65531397, y: .118456721, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2214,6 +2214,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 1797573302}
   - 114: {fileID: 1797573303}
+  - 114: {fileID: 1797573304}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -2242,27 +2243,45 @@ MonoBehaviour:
   m_GameObject: {fileID: 1797573301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d759744f742459748b1eec72e8051b90, type: 3}
+  m_Script: {fileID: 11500000, guid: a30f61ce21417cf498f41fa25d477372, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pathContainer: {fileID: 1887472473}
-  currentPoint: 0
+  pathtype: 0
   onStart: 1
   moveToPath: 1
+  closePath: 1
   orientToPath: 1
-  smoothRotation: 0
+  local: 0
+  lookAhead: 0
   sizeToAdd: 0
   StopAtPoint: []
   _messages: []
   timeValue: 1
-  speed: 2
-  easetype: 21
+  speed: 1
+  easetype: 0
   looptype: 2
-  lockAxis: 2
+  currentPoint: 0
+  lockAxis: 0
+  lockPosition: 0
   anim: {fileID: 0}
   walkAnim: {fileID: 0}
   idleAnim: {fileID: 0}
   crossfade: 0
+--- !u!114 &1797573304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1797573301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8d949b252066ec543a1d8736876f2799, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  agroRadius: 2
+  leashRadius: 5
+  resumeWalkRadius: .100000001
 --- !u!1 &1824017979
 GameObject:
   m_ObjectHideFlags: 0
