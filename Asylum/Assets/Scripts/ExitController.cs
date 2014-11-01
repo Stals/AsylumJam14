@@ -19,7 +19,10 @@ public class ExitController : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D coll) {
 		int i = 0;
 
+		//coll.gameObject.SetActive (false);
+
 		coll.transform.parent = connectedExit.transform.parent;
+		coll.transform.position = connectedExit.transform.position;
 		//coll.transform.position = 
 
 		/*if (coll.gameObject.tag == "Line") {
