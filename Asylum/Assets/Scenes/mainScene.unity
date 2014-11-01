@@ -188,6 +188,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 88686681}
+  - 114: {fileID: 88686682}
   m_Layer: 0
   m_Name: Tile2
   m_TagString: Untagged
@@ -209,6 +210,17 @@ Transform:
   - {fileID: 252145855}
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!114 &88686682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 88686680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d08853d370c0449c68ab2962ee6e5be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &252145854
 GameObject:
   m_ObjectHideFlags: 0
@@ -882,6 +894,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1997014300}
+  - 114: {fileID: 1997014301}
   m_Layer: 0
   m_Name: Tile1
   m_TagString: Untagged
@@ -903,6 +916,17 @@ Transform:
   - {fileID: 1260465737}
   m_Father: {fileID: 0}
   m_RootOrder: 3
+--- !u!114 &1997014301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1997014299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d08853d370c0449c68ab2962ee6e5be2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2004521382
 Prefab:
   m_ObjectHideFlags: 0

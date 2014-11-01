@@ -17,12 +17,20 @@ public class ExitController : MonoBehaviour {
 	}
 
 	void OnTriggerEnter2D(Collider2D coll) {
+		if (!connectedExit) {
+			return;
+		}
+
 		int i = 0;
 
 		//coll.gameObject.SetActive (false);
 
 		coll.transform.parent = connectedExit.transform.parent;
 		coll.transform.position = connectedExit.transform.position;
+
+
+		connectedExit.transform.parent.GetComponent<TileContainer>().moveCamera ();
+
 		//coll.transform.position = 
 
 		/*if (coll.gameObject.tag == "Line") {
