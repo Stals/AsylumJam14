@@ -33,9 +33,4 @@ public class Tile1Controller : TileContainer {
     {
 
     }
-
-    IEnumerator say(string text, float delay, GameObject speaker){
-        yield return new WaitForSeconds(delay);
-        Game.Instance.getManager().Speak(text, delay, speaker);
-    }
 }

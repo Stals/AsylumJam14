@@ -26,8 +26,8 @@ public class TileContainer : MonoBehaviour {
     {
     }
 
-    /*public IEnumerator say(string text, float delay, GameObject speaker) {
-        Game.Instance.getManager().Speak(text, delay, speaker);
+    public IEnumerator say(string text, float delay, GameObject speaker){
         yield return new WaitForSeconds(delay);
-    }*/
+        Game.Instance.getManager().Speak(text, delay, speaker);
+    }
 }
