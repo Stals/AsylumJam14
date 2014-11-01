@@ -265,7 +265,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b1052035a16c64bbb84b7014021e43f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connectedExit: {fileID: 0}
+  connectedExit: {fileID: 1260465733}
 --- !u!50 &252145857
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -360,6 +360,10 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 9466d33788d074f33aa3c68fe4fa5fdc, type: 2}
+      propertyPath: connectedExit
+      value: 
+      objectReference: {fileID: 1260465733}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9466d33788d074f33aa3c68fe4fa5fdc, type: 2}
   m_RootGameObject: {fileID: 252145854}

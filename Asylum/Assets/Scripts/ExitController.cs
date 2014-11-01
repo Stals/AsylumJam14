@@ -6,6 +6,8 @@ public class ExitController : MonoBehaviour {
 	[SerializeField]
 	GameObject connectedExit;
 
+    bool isTriggered = false;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -16,34 +18,30 @@ public class ExitController : MonoBehaviour {
 	
 	}
 
+    public void setTriggered(bool v)
+    {
+        isTriggered = v;
+    }
+
 	void OnTriggerEnter2D(Collider2D coll) {
+		if (isTriggered) {
+			return;
+		}
+
 		if (!connectedExit) {
 			return;
 		}
 
-		int i = 0;
-
-		//coll.gameObject.SetActive (false);
-
 		coll.transform.parent = connectedExit.transform.parent;
 		coll.transform.position = connectedExit.transform.position;
 
-
+		connectedExit.GetComponent<ExitController> ().setTriggered(true);
 		connectedExit.transform.parent.GetComponent<TileContainer>().moveCamera ();
-
-		//coll.transform.position = 
-
 		/*if (coll.gameObject.tag == "Line") {
-			LineController lineController = coll.gameObject.GetComponent<LineController> ();
-			if (lineController.state == LineController.State.active) {
-				DestroySelf ();
-			}
-			
-		} else if (coll.gameObject.tag == "Heart") {
-			
-			coll.gameObject.GetComponent<HeartController>().damage();
-			Game.Instance.getManager().shake();
-			DestroySelf ();
 		}*/
 	}
+
+    void OnTriggerExit2D(Collider2D coll) {
+        isTriggered = false;
+    }
 }
