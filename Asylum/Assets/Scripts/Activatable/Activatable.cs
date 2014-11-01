@@ -18,17 +18,31 @@ public class Activatable : MonoBehaviour {
                                                   new Vector3(currentPosition.x,
                     currentPosition.y,
                     0), transform.rotation));
+
+        setImageOpactiy(0.5f);
     }
 	
 	// Update is called once per frame
 	void FixedUpdate () {
+
         if (isTriggered)
         {
-            if (Input.GetKey (KeyCode.Space)) {
+            setImageOpactiy(1f);
+            if (Input.GetKey(KeyCode.Space))
+            {
                 activate();
             }
+        } else
+        {
+            setImageOpactiy(0.5f);
         }
 	}
+
+    void setImageOpactiy(float opacity){
+        Color color = img.renderer.material.color;
+        color.a = opacity;
+        img.renderer.material.color = color;
+    }
 
     /*
         ifistrigger - run overloaded activate

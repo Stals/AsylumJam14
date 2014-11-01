@@ -11,7 +11,8 @@ GameObject:
   - 212: {fileID: 21200000}
   - 58: {fileID: 5800000}
   - 50: {fileID: 5000000}
-  m_Layer: 0
+  - 114: {fileID: 11400000}
+  m_Layer: 9
   m_Name: brother
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -37,10 +38,10 @@ Rigidbody2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100000}
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: .0500000007
+  m_LinearDrag: 5
+  m_AngularDrag: 2
   m_GravityScale: 0
-  m_FixedAngle: 1
+  m_FixedAngle: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -56,6 +57,19 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_Radius: .25
   m_Center: {x: 0, y: 0}
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec7cfb6654cf045fcba8a33f793fc1e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: .0500000007
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -75,7 +89,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 30
   m_Sprite: {fileID: 21300000, guid: 5af12af921dae4819b2797c5c8ef1d77, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1001 &100100000
