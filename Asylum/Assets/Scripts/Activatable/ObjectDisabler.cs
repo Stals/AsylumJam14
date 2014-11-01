@@ -8,7 +8,7 @@ public class ObjectDisabler : Activatable {
 
 	// Use this for initialization
 	void Start () {
-	
+        init();
 	}
 	
 	// Update is called once per frame

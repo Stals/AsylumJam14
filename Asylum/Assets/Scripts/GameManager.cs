@@ -13,6 +13,9 @@ public class GameManager : MonoBehaviour {
 	[SerializeField]
     GameObject brother;
 
+    [SerializeField]
+    public GameObject activatableImagePrefab;
+
 	//[SerializeField]
 	//GameOverController gameOverController;
     
