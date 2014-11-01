@@ -43,6 +43,7 @@ MonoBehaviour:
   brother: {fileID: 0}
   activatableImagePrefab: {fileID: 100000, guid: 224c26070a61b447ab60be2c8e25240d,
     type: 2}
+  speechPanel: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
