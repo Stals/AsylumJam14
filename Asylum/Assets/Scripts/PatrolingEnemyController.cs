@@ -46,7 +46,48 @@ class ReturningToRoute : State
 
 public class PatrolingEnemyController : MonoBehaviour {
 
-	
+    public interface State
+    {
+        void Action(PatrolingEnemyController me);
+    }
+    
+    class Walking : State
+    {
+        public void Action(PatrolingEnemyController me)
+        {
+            if (me.EnemyNearby() && me.DistanceIsClose())
+            {
+                me.myCachePos = me.transform.position;
+                me.myMoveBehavior.Pause();
+                me.CurrentState = PatrolingEnemyController.StatesArray[(int)PatrolingEnemyController.States.chasingPlayer];
+            }
+        }
+    }
+    
+    class ChasingEnemy : State
+    {
+        public void Action(PatrolingEnemyController me)
+        {
+            me.ChasePlayer();
+            if (!me.DistanceIsClose()||(!me.EnemyNearby()))
+            {
+                me.CurrentState = PatrolingEnemyController.StatesArray[(int)PatrolingEnemyController.States.returningToRoute];
+            }
+        }
+    }
+    
+    class ReturningToRoute : State
+    {
+        public void Action(PatrolingEnemyController me)
+        {
+            me.ReturnToRoute();
+            if (me.CanResumeWalk())
+            {
+                me.myMoveBehavior.Resume();
+                me.CurrentState = PatrolingEnemyController.StatesArray[(int)PatrolingEnemyController.States.walking];
+            }
+        }
+    }
 
 	[SerializeField]
 	float agroRadius = 1.0f;
