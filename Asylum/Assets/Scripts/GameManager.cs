@@ -19,6 +19,9 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     UIFollowTarget speechPanel;
 
+    [SerializeField]
+    TileContainer firstTile;
+
     UILabel speechLabel;
 
 	//[SerializeField]
@@ -32,13 +35,17 @@ public class GameManager : MonoBehaviour {
         speechLabel = speechPanel.gameObject.GetComponentInChildren<UILabel>();
 
 		Game.Instance.init (this);
-
-        Speak("hi", 2f, brother);
+        StartCoroutine(startGame());
 
 		//cameraShake = Camera.main.gameObject.AddComponent("CameraShake") as CameraShake;
 		//currentLevelLabel.text = "Level: " + (Game.Instance.getCurrentLevelID () + 1).ToString();
 		//currentLevelState = LevelState.Running;
 	}
+
+    public IEnumerator startGame() {
+        yield return new WaitForSeconds(1f);
+        firstTile.tileEntered();
+    }
 	
 	// Update is called once per frame
 	void Update () {

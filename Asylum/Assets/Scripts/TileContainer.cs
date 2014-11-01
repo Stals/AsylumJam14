@@ -17,4 +17,17 @@ public class TileContainer : MonoBehaviour {
 	{
 		Camera.main.transform.position = new Vector3 (transform.position.x,transform.position.y,Camera.main.transform.position.z);
 	}
+
+    public virtual void tileEntered()
+    {
+    }
+
+    public virtual void darkWorldEntered()
+    {
+    }
+
+    /*public IEnumerator say(string text, float delay, GameObject speaker) {
+        Game.Instance.getManager().Speak(text, delay, speaker);
+        yield return new WaitForSeconds(delay);
+    }*/
 }
