@@ -2,6 +2,60 @@
 using System.Collections;
 
 public class WalkingPlayerController : MonoBehaviour {
+
+    #region Classes
+    abstract public class State
+    {
+        public enum States
+        {
+            withBrother,
+            alone
+        }
+        
+        public static State[] StatesArray = new State[]{new WithBrother(), new Alone()};
+
+        public static int loneliness = 120;
+        
+        abstract public void Update(WalkingPlayerController me);
+    }
+    
+    class WithBrother : State
+    {
+        override public void Update(WalkingPlayerController me)
+        {
+            if (Input.GetKeyDown(KeyCode.Tab)) 
+            {
+                loneliness = 120;
+                me.GetComponent<SpringJoint2D>().enabled = false;
+                me.CurrentBrotherState = StatesArray[(int) States.alone];
+            }
+        }
+    }
+    
+    class Alone : State
+    {
+        override public void Update(WalkingPlayerController me)
+        {
+            if (Input.GetKeyDown(KeyCode.Tab)) 
+            {
+                loneliness--;
+                if (loneliness < 0)
+                {
+                    me.Die();
+                    return;
+                }
+
+                if (Vector3.Magnitude(me.transform.position - Game.Instance.getManager().brother.transform.position) < 1.0f)
+                {
+                    me.GetComponent<SpringJoint2D>().enabled = true;
+                    me.CurrentBrotherState = StatesArray[(int) States.withBrother];
+                }
+            }
+        }
+    }
+
+    #endregion
+
 	
 	public KeyCode moveUp;
 	public KeyCode moveDown;
@@ -13,23 +67,29 @@ public class WalkingPlayerController : MonoBehaviour {
 
     Vector3 currentPosition;
 
+    State currentBrotherState;
+
+    public State CurrentBrotherState
+    {
+        get {return currentBrotherState;}
+        set {currentBrotherState = value;}
+    }
+
+
 	// Use this for initialization
 	void Start () {
-	
+        currentBrotherState = State.StatesArray [(int)State.States.withBrother];
 	}
 	
 	// Update is called once per frame
 	void Update () {
-	
+        currentBrotherState.Update(this);	
 	}
 
     void FixedUpdate()
     {
         currentPosition = this.transform.position;
-        if (Game.Instance.isControlsEnabled())
-        {
-            updateMovment();
-        }
+        updateMovment();
     }
 
     TileContainer getCurrentTile()
@@ -62,10 +122,6 @@ public class WalkingPlayerController : MonoBehaviour {
         
         this.transform.position  =  new Vector3(currentPosition.x + v.x, currentPosition.y + v.y);
 
-        /*
-        transform.rotation = Quaternion.LookRotation( this.transform.position + v);
-        */
-
         if ((v.x != 0) || (v.y != 0))
         {
 
@@ -80,12 +136,11 @@ public class WalkingPlayerController : MonoBehaviour {
             transform.eulerAngles = angles;
         }
 
-        //Quaternion q = transform.rotation;
-       // q.z = degrees;
+    }
 
-//        transform.rotation = q;
+    public void Die()
+    {
 
-        //transform.rotation = new Quaternion(transform.rotation.x, transform.rotation.y, degrees, transform.rotation.w);
     }
 
     /*public void PointTowardsMovementDirection()
