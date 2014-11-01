@@ -2147,7 +2147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 139710adc1ab84e9a901bb7a38766165, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToDisable: {fileID: 0}
+  objectToDisable: {fileID: 1168967059}
 --- !u!1 &1592736808
 GameObject:
   m_ObjectHideFlags: 0
@@ -2347,7 +2347,7 @@ MonoBehaviour:
   _messages: []
   timeValue: 1
   speed: 2
-  easetype: 12
+  easetype: 21
   looptype: 2
   lockAxis: 2
   anim: {fileID: 0}
