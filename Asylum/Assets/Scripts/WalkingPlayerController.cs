@@ -98,7 +98,7 @@ public class WalkingPlayerController : MonoBehaviour {
         }
     }
 
-    TileContainer getCurrentTile()
+    public TileContainer getCurrentTile()
     {
         return transform.parent.GetComponent<TileContainer>();
     }
