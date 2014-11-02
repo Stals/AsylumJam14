@@ -18,7 +18,9 @@ public class CameraShake : MonoBehaviour
 	
 	void Update (){
 		if (shake_intensity > 0){
-			transform.position = originPosition + Random.insideUnitSphere * shake_intensity;
+            Vector3 newPos = originPosition + Random.insideUnitSphere * shake_intensity;
+            newPos.z = -10;
+            transform.position = newPos;
 			//transform.position = new Vector3(transform.position.x, transform.position.y, originPosition.z);
 			
 			/*transform.rotation = new Quaternion(
@@ -33,8 +35,12 @@ public class CameraShake : MonoBehaviour
 	public void Shake(float inten, float decay){
 		if (shake_intensity <= 0)
 		{
-			originPosition = transform.position;
-			originRotation = transform.rotation;
+            GameObject player = Game.Instance.getManager().player;
+            TileContainer tile = player.GetComponent<WalkingPlayerController>().getCurrentTile();
+            originPosition = tile.transform.position;
+            originPosition.z = -10;
+
+			//originRotation = tile.transform.rotation;
 		}
 		shake_intensity = inten;
 		shake_decay = decay;

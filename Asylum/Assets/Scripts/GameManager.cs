@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour {
     {
         if (Game.Instance.HorrorNight)
         {
+            // добавить base туда - и при смене локации менять 
             shake();
         }
     }
@@ -104,6 +105,11 @@ public class GameManager : MonoBehaviour {
 
     public void shake()
     {
-        cameraShake.Shake (0.05f, 0.02f);
+        cameraShake.Shake (0.02f, 0.02f);
+    }
+
+    public void stopShake()
+    {
+        cameraShake.stopShake();
     }
 }
