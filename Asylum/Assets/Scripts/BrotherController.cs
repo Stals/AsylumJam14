@@ -29,7 +29,7 @@ public class BrotherController : MonoBehaviour {
 
     public class RunningFromSister : State
     {
-        Vector2 target = new Vector3(5, 5, 0);
+        Vector3 target = new Vector3(5, 5, 0);
         public float speed = 0.1f;
 
         override public void Update(BrotherController me)
@@ -42,6 +42,9 @@ public class BrotherController : MonoBehaviour {
                 //TODO teleport and change tile
                 me.setState(new Normal());
             }
+
+            me.transform.LookAt(target);
+            me.transform.Rotate(new Vector3(0,-90,0), Space.Self);//correcting the original rotation
         }
     }
 
