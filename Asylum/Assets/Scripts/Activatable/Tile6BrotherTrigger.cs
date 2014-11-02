@@ -30,9 +30,8 @@ public class Tile6BrotherTrigger : Activatable {
 
         tile.startCutscene(0);
 
-        StartCoroutine(tile.say("Hell no!", 0.5f, brother));
-        StartCoroutine(tile.say("fuck this shit", 0.5f, brother));
-        StartCoroutine(tile.say("", 1f, brother));
+        tile.sayText("Hell no!", 0.5f, brother);
+        tile.sayText("fuck this shit", 0.5f, brother);
         StartCoroutine(tile.changeBrotherState(new BrotherController.RunningFromSister(), 0.1f));
 
         StartCoroutine(tile.endCutscene(0f));

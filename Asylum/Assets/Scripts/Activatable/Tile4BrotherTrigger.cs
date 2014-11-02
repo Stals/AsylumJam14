@@ -45,12 +45,11 @@ public class Tile4BrotherTrigger : Activatable {
 
         tile.startCutscene(0);
 
-        StartCoroutine(tile.say("monsters", 0.5f, brother));
-        StartCoroutine(tile.say("me stay=)", 0.5f, brother));
-        StartCoroutine(tile.say("ok", 1f, player));
-        StartCoroutine(tile.say("lets separate", 1f, player));
+        tile.sayText("monsters", 0.5f, brother);
+        tile.sayText("me stay=)", 0.5f, brother);
+        tile.sayText("ok", 1f, player);
+        tile.sayText("lets separate", 1f, player);
 
-        StartCoroutine(tile.say("", 1f, player));
 
         Game.Instance.setReachedHandsAbility(true);
         Game.Instance.setHandsChangeEnabled(true);

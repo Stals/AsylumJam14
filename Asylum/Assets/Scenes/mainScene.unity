@@ -6735,6 +6735,10 @@ Prefab:
       propertyPath: mOverflow
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 11400000, guid: 3a8b0396d20804e529e3f27de54cb713, type: 2}
+      propertyPath: aspectRatio
+      value: .266666681
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a8b0396d20804e529e3f27de54cb713, type: 2}
   m_RootGameObject: {fileID: 68680870}
