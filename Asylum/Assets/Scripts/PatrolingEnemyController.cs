@@ -17,7 +17,7 @@ public class PatrolingEnemyController : MonoBehaviour {
         public State[] StatesArray = new State[]{new Walking(), new ChasingEnemy(), new ReturningToRoute()};
     }
         
-        abstract public class State
+    abstract public class State
     {
         abstract public void Action(PatrolingEnemyController me);
     }
