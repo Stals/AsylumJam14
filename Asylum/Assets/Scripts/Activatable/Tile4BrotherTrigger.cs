@@ -48,7 +48,7 @@ public class Tile4BrotherTrigger : Activatable {
         tile.sayText("monsters", 0.5f, brother);
         tile.sayText("me stay=)", 0.5f, brother);
         tile.sayText("ok", 1f, player);
-        tile.sayText("lets separate", 1f, player);
+        tile.sayText("lets separate", 0.1f, player);
 
 
         Game.Instance.setReachedHandsAbility(true);

@@ -29,7 +29,6 @@ public class Tile2MonterEnabler : Activatable {
 
         tile.sayText("im scared", 0.5f, brother);
         tile.sayText("norm", 1f, player);
-        tile.sayText("", 1f, player);
         StartCoroutine(tile.endCutscene(0f));
     }
 }
