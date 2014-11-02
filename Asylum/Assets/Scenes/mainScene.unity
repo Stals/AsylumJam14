@@ -1733,7 +1733,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 60
   m_Sprite: {fileID: 21300000, guid: d032dc1d2929d44b1ad3c7daa7ef82b6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &458146003
@@ -2602,7 +2602,7 @@ GameObject:
   - 4: {fileID: 577709807}
   - 68: {fileID: 577709808}
   m_Layer: 8
-  m_Name: GameObject
+  m_Name: treesCollider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7773,7 +7773,7 @@ GameObject:
   - 4: {fileID: 1868415628}
   - 212: {fileID: 1868415627}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: trees
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
