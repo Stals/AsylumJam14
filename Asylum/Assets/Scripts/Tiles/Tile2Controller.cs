@@ -19,9 +19,11 @@ public class Tile2Controller : TileContainer {
         GameObject brother = Game.Instance.getManager().brother;
         
         StartCoroutine(startCutscene(1f));
-        StartCoroutine(say("we are lost", 0.5f, brother));
-        StartCoroutine(say("dont cry", 1f, player));
-        StartCoroutine(say("", 1f, brother));
+        StartCoroutine(say("We haven’t been here", 1f, brother));
+        StartCoroutine(say("We’re lost", 2f, brother));
+        StartCoroutine(say("It’s gonna be ok", 2f, player));
+        StartCoroutine(say("Please, don’t cry sweetie", 2f, player));
+        StartCoroutine(say("", 2f, player));
         StartCoroutine(endCutscene(0f));
     }
     
