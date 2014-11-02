@@ -31,6 +31,11 @@ public class TileContainer : MonoBehaviour {
     public IEnumerator say(string text, float delay, GameObject speaker){
         _delay += delay;
 
+        //if (!string.IsNullOrEmpty(text))
+        //{
+        //    say("", 0.1f, speaker);
+        //}
+
         yield return new WaitForSeconds(_delay);
         Game.Instance.getManager().Speak(text, 0, speaker);
     }
