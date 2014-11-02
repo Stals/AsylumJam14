@@ -16,7 +16,7 @@ public class WalkingPlayerController : MonoBehaviour {
 
     }
     
-    class WithBrother : State
+    public class WithBrother : State
     {
         override public void Update(WalkingPlayerController me)
         {
@@ -32,11 +32,11 @@ public class WalkingPlayerController : MonoBehaviour {
             me.GetComponent<SpringJoint2D>().enabled = false;
             Game.Instance.getManager().setNightStateHorror(true);
             me.CurrentBrotherState = new Alone();
-            Game.Instance.getManager().brother.GetComponent<Rigidbody2D>().isKinematic = true;
+            Game.Instance.getManager().brother.GetComponent<BoxCollider2D>().enabled = false;
         }
     }
     
-    class Alone : State
+    public class Alone : State
     {
         override public void Update(WalkingPlayerController me)
         {
@@ -60,7 +60,7 @@ public class WalkingPlayerController : MonoBehaviour {
                 me.GetComponent<SpringJoint2D>().enabled = true;
                 Game.Instance.getManager().setNightStateHorror(false);
                 me.CurrentBrotherState = new WithBrother();
-                Game.Instance.getManager().brother.GetComponent<Rigidbody2D>().isKinematic = false;
+                Game.Instance.getManager().brother.GetComponent<BoxCollider2D>().enabled = true;
             }
         }
     
@@ -77,6 +77,7 @@ public class WalkingPlayerController : MonoBehaviour {
 	public KeyCode moveRight;
 
     public Vector2 speed = new Vector2(1.02f, 1.02f);
+    public Vector3 lastV = new Vector3();
 
     Vector3 currentPosition;
 
@@ -138,6 +139,8 @@ public class WalkingPlayerController : MonoBehaviour {
         {
             v.x += speed.x;
         }
+
+        lastV = v;
         
         this.transform.position  =  new Vector3(currentPosition.x + v.x, currentPosition.y + v.y);
 

@@ -46,7 +46,10 @@ public class ExitController : MonoBehaviour {
               BrotherController brother = Game.Instance.getManager().brother.GetComponent<BrotherController>();
 
             if(player.CurrentBrotherState is WalkingPlayerController.WithBrother){
-                //brother.transform = 
+                Vector3 myPos = player.transform.position;
+
+                myPos = myPos - 0.5f * player.GetComponent<WalkingPlayerController>().lastV.normalized;
+                brother.transform.position = myPos; 
             }
         }
 	}
