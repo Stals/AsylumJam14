@@ -32,6 +32,7 @@ public class WalkingPlayerController : MonoBehaviour {
             me.GetComponent<SpringJoint2D>().enabled = false;
             Game.Instance.getManager().setNightStateHorror(true);
             me.CurrentBrotherState = new Alone();
+            Game.Instance.getManager().brother.GetComponent<Rigidbody2D>().isKinematic = true;
         }
     }
     
@@ -59,6 +60,7 @@ public class WalkingPlayerController : MonoBehaviour {
                 me.GetComponent<SpringJoint2D>().enabled = true;
                 Game.Instance.getManager().setNightStateHorror(false);
                 me.CurrentBrotherState = new WithBrother();
+                Game.Instance.getManager().brother.GetComponent<Rigidbody2D>().isKinematic = false;
             }
         }
     
