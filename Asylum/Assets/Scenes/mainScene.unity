@@ -2371,7 +2371,7 @@ GameObject:
   - 50: {fileID: 725214152}
   - 114: {fileID: 725214155}
   - 114: {fileID: 725214156}
-  m_Layer: 9
+  m_Layer: 11
   m_Name: brother
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2529,6 +2529,10 @@ Prefab:
       propertyPath: teleportLocation
       value: 
       objectReference: {fileID: 63434004}
+    - target: {fileID: 100000, guid: be83c848c2a1448bca193346d01b4431, type: 2}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be83c848c2a1448bca193346d01b4431, type: 2}
   m_RootGameObject: {fileID: 725214150}
