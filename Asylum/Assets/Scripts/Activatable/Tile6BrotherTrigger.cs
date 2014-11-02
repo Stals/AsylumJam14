@@ -34,6 +34,8 @@ public class Tile6BrotherTrigger : Activatable {
         StartCoroutine(tile.say("fuck this shit", 0.5f, brother));
         StartCoroutine(tile.say("", 1f, brother));
         StartCoroutine(tile.endCutscene(0f));
+        // move brother
+        // teleport brother
 
     }
 }

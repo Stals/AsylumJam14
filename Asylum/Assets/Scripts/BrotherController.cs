@@ -20,6 +20,15 @@ public class BrotherController : MonoBehaviour {
         //    transform.Translate(new Vector3(speed* Time.deltaTime,0,0) );
         //}
     }
+
+    /*
+    public Transform target;
+    public float speed;
+    void Update() {
+        float step = speed * Time.deltaTime;
+        transform.position = Vector3.MoveTowards(transform.position, target.position, step);
+    }*/
+
 }
 
 
