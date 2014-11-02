@@ -34,7 +34,8 @@ public class WalkingPlayerController : MonoBehaviour {
             me.CurrentBrotherState = new Alone();
             Game.Instance.getManager().brother.GetComponent<Rigidbody2D>().isKinematic = true;
             me.changeLightOpacity(0.78f);
-
+            Game.Instance.getManager().particles.SetActive(true);
+            
         }
     }
     
@@ -64,6 +65,7 @@ public class WalkingPlayerController : MonoBehaviour {
                 me.CurrentBrotherState = new WithBrother();
                 Game.Instance.getManager().brother.GetComponent<Rigidbody2D>().isKinematic = false;
                 me.changeLightOpacity(0.5f);
+                Game.Instance.getManager().particles.SetActive(false);
             }
         }
     
