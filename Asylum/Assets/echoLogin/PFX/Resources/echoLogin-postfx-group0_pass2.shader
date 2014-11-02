@@ -27,7 +27,6 @@ CGPROGRAM
 #pragma multi_compile ECHO_PFX_SCANLINE_OFF ECHO_PFX_SCANLINE_ON
 #pragma multi_compile ECHO_PFX_OVERLAY_MUL_OFF ECHO_PFX_OVERLAY_MUL_ON
 #pragma multi_compile ECHO_PFX_OVERLAY_ADD_OFF ECHO_PFX_OVERLAY_ADD_ON
-#pragma multi_compile ECHO_PFX_SHOCKWAVE_OFF ECHO_PFX_SHOCKWAVE_ON
 
 #ifdef OVERLAY_NORMAL_TC
 #ifdef OVERLAY_SCR_TC
@@ -386,7 +385,6 @@ fixed3 _ioRGB = tex2D ( _echoScreen, v.tc1.xy ).xyz;
 				fixed3 aocolor 	= tex2D ( _OverlayTexAdd, ECHODEF_OVERLAY_ADD_TC ).xyz;
 				_ioRGB.xyz 		= _ioRGB.xyz += lerp ( fixed3(0,0,0), aocolor.xyz, _echoOverlayAddFade );
 #endif
-
 
 return fixed4 ( _ioRGB, 1 );
 }
