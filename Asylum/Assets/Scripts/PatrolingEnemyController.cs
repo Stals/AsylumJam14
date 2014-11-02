@@ -1,93 +1,65 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public interface State
-{
-    void Action(PatrolingEnemyController me);
-}
-
-class Walking : State
-{
-    public void Action(PatrolingEnemyController me)
-    {
-        if (me.EnemyNearby() && me.DistanceIsClose())
-        {
-            me.myCachePos = me.transform.position;
-            me.myMoveBehavior.Pause();
-            me.CurrentState = PatrolingEnemyController.StatesArray[(int)PatrolingEnemyController.States.chasingPlayer];
-        }
-    }
-}
-
-class ChasingEnemy : State
-{
-    public void Action(PatrolingEnemyController me)
-    {
-        me.ChasePlayer();
-        if (!me.DistanceIsClose()||(!me.EnemyNearby()))
-        {
-            me.CurrentState = PatrolingEnemyController.StatesArray[(int)PatrolingEnemyController.States.returningToRoute];
-        }
-    }
-}
-
-class ReturningToRoute : State
-{
-    public void Action(PatrolingEnemyController me)
-    {
-        me.ReturnToRoute();
-        if (me.CanResumeWalk())
-        {
-            me.myMoveBehavior.Resume();
-            me.CurrentState = PatrolingEnemyController.StatesArray[(int)PatrolingEnemyController.States.walking];
-        }
-    }
-}
-
 public class PatrolingEnemyController : MonoBehaviour {
 
-    public interface State
+    #region Classes
+
+    public class StatesHolder
     {
-        void Action(PatrolingEnemyController me);
+        public enum States
+        {
+            walking,
+            chasingPlayer,
+            returningToRoute
+        }
+        
+        public State[] StatesArray = new State[]{new Walking(), new ChasingEnemy(), new ReturningToRoute()};
+    }
+        
+        abstract public class State
+    {
+        abstract public void Action(PatrolingEnemyController me);
     }
     
     class Walking : State
     {
-        public void Action(PatrolingEnemyController me)
+        override public void Action(PatrolingEnemyController me)
         {
             if (me.EnemyNearby() && me.DistanceIsClose())
             {
                 me.myCachePos = me.transform.position;
                 me.myMoveBehavior.Pause();
-                me.CurrentState = PatrolingEnemyController.StatesArray[(int)PatrolingEnemyController.States.chasingPlayer];
+                me.CurrentState = me.states.StatesArray[(int)StatesHolder.States.chasingPlayer];
             }
         }
     }
-    
+
     class ChasingEnemy : State
     {
-        public void Action(PatrolingEnemyController me)
+        override public void Action(PatrolingEnemyController me)
         {
             me.ChasePlayer();
             if (!me.DistanceIsClose()||(!me.EnemyNearby()))
             {
-                me.CurrentState = PatrolingEnemyController.StatesArray[(int)PatrolingEnemyController.States.returningToRoute];
+                me.CurrentState = me.states.StatesArray[(int)StatesHolder.States.returningToRoute];
             }
         }
     }
     
     class ReturningToRoute : State
     {
-        public void Action(PatrolingEnemyController me)
+        override public void Action(PatrolingEnemyController me)
         {
             me.ReturnToRoute();
             if (me.CanResumeWalk())
             {
                 me.myMoveBehavior.Resume();
-                me.CurrentState = PatrolingEnemyController.StatesArray[(int)PatrolingEnemyController.States.walking];
+                me.CurrentState = me.states.StatesArray[(int)StatesHolder.States.walking];
             }
         }
     }
+    #endregion
 
 	[SerializeField]
 	float agroRadius = 1.0f;
@@ -103,16 +75,9 @@ public class PatrolingEnemyController : MonoBehaviour {
 	public Vector3 enemyPos = new Vector3();
     public Vector3 myCachePos = new Vector3();
 
-    public enum States
-    {
-        walking,
-        chasingPlayer,
-        returningToRoute
-    }
-
-    public static State[] StatesArray = new State[]{new Walking(), new ChasingEnemy(), new ReturningToRoute()};
-
 	public hoMove myMoveBehavior;
+
+    public StatesHolder states = new StatesHolder();
 
     public State CurrentState
     {
@@ -126,7 +91,7 @@ public class PatrolingEnemyController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		currentState = StatesArray[(int)States.walking];
+        currentState = states.StatesArray[(int)StatesHolder.States.walking];
 		myMoveBehavior = GetComponent<hoMove> ();
 	}
 	
