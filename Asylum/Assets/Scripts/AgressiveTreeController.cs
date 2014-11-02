@@ -129,5 +129,13 @@ public class AgressiveTreeController : MonoBehaviour {
         currentState.Action(this);
 	}
 
+    void OnTriggerEnter2D (Collider2D col)
+    {
+        if ((col.gameObject.name == "player") || (col.gameObject.name == "brother"))
+        {
+            Game.Instance.getManager().player.GetComponent<WalkingPlayerController>().Die();
+        }
+    }
+
 
 }

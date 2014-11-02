@@ -146,7 +146,7 @@ public class WalkingPlayerController : MonoBehaviour {
 
     public void Die()
     {
-
+        Debug.LogError("DEATH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
 
     /*public void PointTowardsMovementDirection()
