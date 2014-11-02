@@ -1900,7 +1900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32ebe4defdc524938af341ed357923f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPressable: 1
+  isPressable: 0
   isOnce: 1
 --- !u!61 &554049390
 BoxCollider2D:

@@ -18,7 +18,7 @@ public class TileContainer : MonoBehaviour {
 	public void moveCamera()
 	{
         Game.Instance.getManager().stopShake();
-		Camera.main.transform.position = new Vector3 (transform.position.x,transform.position.y,Camera.main.transform.position.z);
+		Camera.main.transform.position = new Vector3 (transform.position.x,transform.position.y, -10);
 	}
 
     public virtual void tileEntered()
