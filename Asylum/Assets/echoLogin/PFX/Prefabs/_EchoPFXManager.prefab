@@ -1,0 +1,597 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400000}
+  - 114: {fileID: 11400000}
+  m_Layer: 0
+  m_Name: _EchoPFXManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d5a6436fcfd848a9961ca5a357f1a1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ergList:
+  - name: RenderGroup:0
+    id: 0
+    passCount: 0
+    active: 0
+    cameraDepthStart: -1
+    cameraDepthEnd: 2
+    meshCellWidth: 32
+    meshCellHeight: 32
+    rtAdjustSize: 0
+    rtAdjustWidth: 2
+    rtAdjustHeight: 2
+    rtFilterMode: 0000000000000000
+    rtBlendMode: 0000000000000000
+    epeList:
+    - passOpt1:
+      - optType: 7
+        passOrder: 4
+        startDelay: 0
+        attackTime: .200000003
+        sustainTime: .5
+        releaseTime: .200000003
+        fadeMin: 0
+        fadeMax: 1
+        fadeCur: 1
+        rgba: {r: 1, g: 1, b: 1, a: 1}
+        rgbaMultiply: 1
+        distAmountH: 1
+        distSpeedH: 2
+        distStrengthH: 1
+        distAmountV: 0
+        distSpeedV: 0
+        distStrengthV: 0
+        linesAmountDivideH: 1
+        linesAmountH: 256
+        linesScrollH: 0
+        linesAmountDivideV: 1
+        linesAmountV: 4
+        linesScrollV: 0
+        shockDistance: .0710000023
+        shockSize: .108000003
+        shockCenterX: .5
+        shockCenterY: .5
+        overlayST: {x: 1, y: 1, z: 0, w: 0}
+        overlayST_Scroll: {x: 0, y: 0, z: 0, w: 0}
+        customArgs: {x: 0, y: 0, z: 0, w: 0}
+        tex: {fileID: 0}
+        texBlend: 0
+        folded: 0
+      passOpt2: []
+      passActive: 0000
+      name: Shockwave
+      active: 0
+      optionsTotal: 0
+      optionsOff: 0
+    - passOpt1:
+      - optType: 3
+        passOrder: 1
+        startDelay: 0
+        attackTime: 0
+        sustainTime: 0
+        releaseTime: 1
+        fadeMin: 0
+        fadeMax: .280000001
+        fadeCur: .280000001
+        rgba: {r: 1, g: 0, b: 0, a: 1}
+        rgbaMultiply: 1
+        distAmountH: 1
+        distSpeedH: 2
+        distStrengthH: 1
+        distAmountV: 0
+        distSpeedV: 0
+        distStrengthV: 0
+        linesAmountDivideH: 1
+        linesAmountH: 256
+        linesScrollH: 0
+        linesAmountDivideV: 1
+        linesAmountV: 4
+        linesScrollV: 0
+        shockDistance: 0
+        shockSize: .100000001
+        shockCenterX: .5
+        shockCenterY: .5
+        overlayST: {x: 1, y: 1, z: 0, w: 0}
+        overlayST_Scroll: {x: 0, y: 0, z: 0, w: 0}
+        customArgs: {x: 0, y: 0, z: 0, w: 0}
+        tex: {fileID: 0}
+        texBlend: 0
+        folded: 0
+      passOpt2:
+      - optType: 13
+        passOrder: 4
+        startDelay: 0
+        attackTime: .0500000007
+        sustainTime: 0
+        releaseTime: .200000003
+        fadeMin: 0
+        fadeMax: .363999993
+        fadeCur: 0
+        rgba: {r: 1, g: 1, b: 1, a: 1}
+        rgbaMultiply: 1
+        distAmountH: 1
+        distSpeedH: 2
+        distStrengthH: 1
+        distAmountV: 0
+        distSpeedV: 0
+        distStrengthV: 0
+        linesAmountDivideH: 1
+        linesAmountH: 4
+        linesScrollH: 0
+        linesAmountDivideV: 1
+        linesAmountV: 4
+        linesScrollV: 0
+        shockDistance: 0
+        shockSize: .100000001
+        shockCenterX: .5
+        shockCenterY: .5
+        overlayST: {x: 1, y: 1, z: 0, w: 0}
+        overlayST_Scroll: {x: 0, y: 0, z: 0, w: 0}
+        customArgs: {x: 0, y: 0, z: 0, w: 0}
+        tex: {fileID: 2800000, guid: db83c04c0cc94459ba1d71bccfd0bc20, type: 3}
+        texBlend: 0
+        folded: 0
+      passActive: 0000
+      name: ShieldHit
+      active: 0
+      optionsTotal: 0
+      optionsOff: 0
+    - passOpt1:
+      - optType: 3
+        passOrder: 1
+        startDelay: 0
+        attackTime: .00999999978
+        sustainTime: .200000003
+        releaseTime: .300000012
+        fadeMin: 0
+        fadeMax: .865999997
+        fadeCur: .865999997
+        rgba: {r: 1, g: 1, b: 1, a: 1}
+        rgbaMultiply: 1
+        distAmountH: 1
+        distSpeedH: 2
+        distStrengthH: 1
+        distAmountV: 0
+        distSpeedV: 0
+        distStrengthV: 0
+        linesAmountDivideH: 1
+        linesAmountH: 256
+        linesScrollH: 0
+        linesAmountDivideV: 1
+        linesAmountV: 4
+        linesScrollV: 0
+        shockDistance: 0
+        shockSize: .100000001
+        shockCenterX: .5
+        shockCenterY: .5
+        overlayST: {x: 1, y: 1, z: 0, w: 0}
+        overlayST_Scroll: {x: 0, y: 0, z: 0, w: 0}
+        customArgs: {x: 0, y: 0, z: 0, w: 0}
+        tex: {fileID: 0}
+        texBlend: 0
+        folded: 0
+      passOpt2:
+      - optType: 4
+        passOrder: 0
+        startDelay: .209999993
+        attackTime: .200000003
+        sustainTime: 3
+        releaseTime: 1
+        fadeMin: 0
+        fadeMax: 1
+        fadeCur: 1
+        rgba: {r: .100000001, g: .899999976, b: .100000001, a: 1}
+        rgbaMultiply: 4.57999992
+        distAmountH: 1
+        distSpeedH: 2
+        distStrengthH: 1
+        distAmountV: 0
+        distSpeedV: 0
+        distStrengthV: 0
+        linesAmountDivideH: 1
+        linesAmountH: 256
+        linesScrollH: 0
+        linesAmountDivideV: 1
+        linesAmountV: 4
+        linesScrollV: 0
+        shockDistance: 0
+        shockSize: .100000001
+        shockCenterX: .5
+        shockCenterY: .5
+        overlayST: {x: 1, y: 1, z: 0, w: 0}
+        overlayST_Scroll: {x: 0, y: 0, z: 0, w: 0}
+        customArgs: {x: 0, y: 0, z: 0, w: 0}
+        tex: {fileID: 0}
+        texBlend: 0
+        folded: 0
+      passActive: 0000
+      name: NightVision
+      active: 1
+      optionsTotal: 0
+      optionsOff: 0
+    - passOpt1:
+      - optType: 0
+        passOrder: 0
+        startDelay: 0
+        attackTime: 0
+        sustainTime: 2
+        releaseTime: .699999988
+        fadeMin: 0
+        fadeMax: 1
+        fadeCur: 1
+        rgba: {r: 1, g: 1, b: 1, a: 1}
+        rgbaMultiply: 1
+        distAmountH: 1
+        distSpeedH: 2
+        distStrengthH: 1
+        distAmountV: 0
+        distSpeedV: 0
+        distStrengthV: 0
+        linesAmountDivideH: 1
+        linesAmountH: 256
+        linesScrollH: 0
+        linesAmountDivideV: 1
+        linesAmountV: 4
+        linesScrollV: 0
+        shockDistance: 0
+        shockSize: .100000001
+        shockCenterX: .5
+        shockCenterY: .5
+        overlayST: {x: 1, y: 1, z: 0, w: 0}
+        overlayST_Scroll: {x: 0, y: 0, z: 0, w: 0}
+        customArgs: {x: 0, y: 0, z: 0, w: 0}
+        tex: {fileID: 0}
+        texBlend: 0
+        folded: 0
+      - optType: 3
+        passOrder: 1
+        startDelay: 0
+        attackTime: 0
+        sustainTime: .100000001
+        releaseTime: .5
+        fadeMin: 0
+        fadeMax: 1
+        fadeCur: 1
+        rgba: {r: 1, g: 1, b: 1, a: 1}
+        rgbaMultiply: 1
+        distAmountH: 1
+        distSpeedH: 2
+        distStrengthH: 1
+        distAmountV: 0
+        distSpeedV: 0
+        distStrengthV: 0
+        linesAmountDivideH: 1
+        linesAmountH: 256
+        linesScrollH: 0
+        linesAmountDivideV: 1
+        linesAmountV: 4
+        linesScrollV: 0
+        shockDistance: 0
+        shockSize: .100000001
+        shockCenterX: .5
+        shockCenterY: .5
+        overlayST: {x: 1, y: 1, z: 0, w: 0}
+        overlayST_Scroll: {x: 0, y: 0, z: 0, w: 0}
+        customArgs: {x: 0, y: 0, z: 0, w: 0}
+        tex: {fileID: 0}
+        texBlend: 0
+        folded: 0
+      passOpt2:
+      - optType: 5
+        passOrder: 1
+        startDelay: 0
+        attackTime: 0
+        sustainTime: 0
+        releaseTime: 0
+        fadeMin: 0
+        fadeMax: 1
+        fadeCur: .0799999982
+        rgba: {r: 1, g: 1, b: 1, a: 1}
+        rgbaMultiply: 1
+        distAmountH: 1
+        distSpeedH: 2
+        distStrengthH: 1
+        distAmountV: 0
+        distSpeedV: 0
+        distStrengthV: 0
+        linesAmountDivideH: 1
+        linesAmountH: 256
+        linesScrollH: 0
+        linesAmountDivideV: 1
+        linesAmountV: 4
+        linesScrollV: 0
+        shockDistance: 0
+        shockSize: .100000001
+        shockCenterX: .5
+        shockCenterY: .5
+        overlayST: {x: 1, y: 1, z: 0, w: 0}
+        overlayST_Scroll: {x: 0, y: 0, z: 0, w: 0}
+        customArgs: {x: 0, y: 0, z: 0, w: 0}
+        tex: {fileID: 2800000, guid: 2f6e71b90e7e14db199f20f889fd9247, type: 3}
+        texBlend: 0
+        folded: 0
+      - optType: 8
+        passOrder: 2
+        startDelay: 0
+        attackTime: 0
+        sustainTime: 0
+        releaseTime: 0
+        fadeMin: 0
+        fadeMax: 1
+        fadeCur: .345999986
+        rgba: {r: 1, g: 1, b: 1, a: 1}
+        rgbaMultiply: 1
+        distAmountH: 1
+        distSpeedH: 2
+        distStrengthH: 1
+        distAmountV: 0
+        distSpeedV: 0
+        distStrengthV: 0
+        linesAmountDivideH: 1
+        linesAmountH: 2
+        linesScrollH: 0
+        linesAmountDivideV: 1
+        linesAmountV: 4
+        linesScrollV: 0
+        shockDistance: 0
+        shockSize: .100000001
+        shockCenterX: .5
+        shockCenterY: .5
+        overlayST: {x: 1, y: 1, z: 0, w: 0}
+        overlayST_Scroll: {x: 0, y: 0, z: 0, w: 0}
+        customArgs: {x: 0, y: 0, z: 0, w: 0}
+        tex: {fileID: 0}
+        texBlend: 0
+        folded: 0
+      - optType: 15
+        passOrder: 3
+        startDelay: 0
+        attackTime: 0
+        sustainTime: 0
+        releaseTime: 0
+        fadeMin: 0
+        fadeMax: 1
+        fadeCur: .405999988
+        rgba: {r: 1, g: 1, b: 1, a: 1}
+        rgbaMultiply: 1
+        distAmountH: 1
+        distSpeedH: 2
+        distStrengthH: 1
+        distAmountV: 0
+        distSpeedV: 0
+        distStrengthV: 0
+        linesAmountDivideH: 1
+        linesAmountH: 4
+        linesScrollH: 0
+        linesAmountDivideV: 1
+        linesAmountV: 4
+        linesScrollV: 0
+        shockDistance: 0
+        shockSize: .100000001
+        shockCenterX: .5
+        shockCenterY: .5
+        overlayST: {x: 1, y: 1, z: 0, w: 0}
+        overlayST_Scroll: {x: 0, y: 0, z: 0, w: 0}
+        customArgs: {x: 0, y: 0, z: 0, w: 0}
+        tex: {fileID: 2800000, guid: 7e8a645c2bd0740298744a6eaa311d7d, type: 3}
+        texBlend: 0
+        folded: 0
+      passActive: 0000
+      name: Scanlines
+      active: 0
+      optionsTotal: 0
+      optionsOff: 0
+    - passOpt1:
+      - optType: 6
+        passOrder: 3
+        startDelay: 0
+        attackTime: 1
+        sustainTime: -1
+        releaseTime: 2
+        fadeMin: .120999999
+        fadeMax: 1
+        fadeCur: 1
+        rgba: {r: 1, g: 1, b: 1, a: 1}
+        rgbaMultiply: 1
+        distAmountH: 64
+        distSpeedH: 4
+        distStrengthH: .400000006
+        distAmountV: 32
+        distSpeedV: 8
+        distStrengthV: .300000012
+        linesAmountDivideH: 1
+        linesAmountH: 256
+        linesScrollH: 0
+        linesAmountDivideV: 1
+        linesAmountV: 4
+        linesScrollV: 0
+        shockDistance: 0
+        shockSize: .100000001
+        shockCenterX: .5
+        shockCenterY: .5
+        overlayST: {x: 1, y: 1, z: 0, w: 0}
+        overlayST_Scroll: {x: 0, y: 0, z: 0, w: 0}
+        customArgs: {x: 0, y: 0, z: 0, w: 0}
+        tex: {fileID: 0}
+        texBlend: 0
+        folded: 0
+      passOpt2: []
+      passActive: 0000
+      name: Distortion
+      active: 1
+      optionsTotal: 0
+      optionsOff: 0
+    - passOpt1:
+      - optType: 3
+        passOrder: 1
+        startDelay: 0
+        attackTime: .0500000007
+        sustainTime: .100000001
+        releaseTime: 1.20000005
+        fadeMin: 0
+        fadeMax: 1
+        fadeCur: 1
+        rgba: {r: 1, g: 1, b: 1, a: 1}
+        rgbaMultiply: 1
+        distAmountH: 1
+        distSpeedH: 2
+        distStrengthH: 1
+        distAmountV: 0
+        distSpeedV: 0
+        distStrengthV: 0
+        linesAmountDivideH: 1
+        linesAmountH: 256
+        linesScrollH: 0
+        linesAmountDivideV: 1
+        linesAmountV: 4
+        linesScrollV: 0
+        shockDistance: 0
+        shockSize: .100000001
+        shockCenterX: .5
+        shockCenterY: .5
+        overlayST: {x: 1, y: 1, z: 0, w: 0}
+        overlayST_Scroll: {x: 0, y: 0, z: 0, w: 0}
+        customArgs: {x: 0, y: 0, z: 0, w: 0}
+        tex: {fileID: 0}
+        texBlend: 0
+        folded: 0
+      - optType: 9
+        passOrder: 2
+        startDelay: 0
+        attackTime: .100000001
+        sustainTime: 2
+        releaseTime: .5
+        fadeMin: 0
+        fadeMax: 1
+        fadeCur: 1
+        rgba: {r: 1, g: 1, b: 1, a: 1}
+        rgbaMultiply: 1
+        distAmountH: 1
+        distSpeedH: 2
+        distStrengthH: 1
+        distAmountV: 0
+        distSpeedV: 0
+        distStrengthV: 0
+        linesAmountDivideH: 1
+        linesAmountH: 256
+        linesScrollH: 0
+        linesAmountDivideV: 1
+        linesAmountV: 4
+        linesScrollV: 0
+        shockDistance: 0
+        shockSize: .100000001
+        shockCenterX: .5
+        shockCenterY: .5
+        overlayST: {x: 1, y: 1, z: 0, w: 0}
+        overlayST_Scroll: {x: 0, y: 0, z: 0, w: 0}
+        customArgs: {x: 0, y: 0, z: 0, w: 0}
+        tex: {fileID: 2800000, guid: a280118f46d65492bb4ae407401c657c, type: 3}
+        texBlend: 0
+        folded: 0
+      passOpt2: []
+      passActive: 0000
+      name: Thermal
+      active: 0
+      optionsTotal: 0
+      optionsOff: 0
+    autoDetailMin: .5
+    autoDetailLevels: 3
+    autoDetailFudge: .5
+    autoDetailChangeTime: .25
+    possibleOpts1:
+    - type: 0
+      order: 0
+      customCode: 
+      useUniqueTC: 0
+      scanlines: 0
+    - type: 3
+      order: 1
+      customCode: 
+      useUniqueTC: 0
+      scanlines: 0
+    - type: 9
+      order: 2
+      customCode: 
+      useUniqueTC: 0
+      scanlines: 0
+    - type: 6
+      order: 3
+      customCode: 
+      useUniqueTC: 0
+      scanlines: 0
+    - type: 7
+      order: 4
+      customCode: 
+      useUniqueTC: 0
+      scanlines: 0
+    possibleOpts2:
+    - type: 4
+      order: 0
+      customCode: 
+      useUniqueTC: 0
+      scanlines: 0
+    - type: 5
+      order: 1
+      customCode: 
+      useUniqueTC: 0
+      scanlines: 0
+    - type: 8
+      order: 2
+      customCode: 
+      useUniqueTC: 0
+      scanlines: 0
+    - type: 15
+      order: 3
+      customCode: 
+      useUniqueTC: 0
+      scanlines: 0
+    - type: 13
+      order: 4
+      customCode: 
+      useUniqueTC: 0
+      scanlines: 0
+  managerCameraDepth: 10
+  frameRate: 60
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 100000}
+  m_IsPrefabParent: 1
+  m_IsExploded: 1

@@ -41,7 +41,7 @@ public class CameraFilterPack_TV_Old : MonoBehaviour {
 
 		if(!SystemInfo.supportsImageEffects)
 		{
-			enabled = false;
+			enabled = true;
 			return;
 		}
 	}
@@ -60,8 +60,7 @@ public class CameraFilterPack_TV_Old : MonoBehaviour {
 		else
 		{
 			Graphics.Blit(sourceTexture, destTexture);	
-		}
-		
+		}		
 		
 	}
 	
