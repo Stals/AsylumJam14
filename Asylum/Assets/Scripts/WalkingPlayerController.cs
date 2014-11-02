@@ -6,17 +6,14 @@ public class WalkingPlayerController : MonoBehaviour {
     #region Classes
     abstract public class State
     {
-        public enum States
-        {
-            withBrother,
-            alone
-        }
-        
-        public static State[] StatesArray = new State[]{new WithBrother(), new Alone()};
-
         public static int loneliness = 120;
         
         abstract public void Update(WalkingPlayerController me);
+        virtual public void TurnToAlone(WalkingPlayerController me)
+        {}
+        virtual public void TurnToWithBrother(WalkingPlayerController me)
+        {}
+
     }
     
     class WithBrother : State
@@ -25,11 +22,16 @@ public class WalkingPlayerController : MonoBehaviour {
         {
             if (Input.GetKeyDown(KeyCode.Tab)) 
             {
-                loneliness = 120;
-                me.GetComponent<SpringJoint2D>().enabled = false;
-                Game.Instance.getManager().setNightStateHorror(true);
-                me.CurrentBrotherState = StatesArray[(int) States.alone];
+                TurnToAlone(me);
             }
+        }
+
+        override public void TurnToAlone(WalkingPlayerController me)
+        {
+            loneliness = 120;
+            me.GetComponent<SpringJoint2D>().enabled = false;
+            Game.Instance.getManager().setNightStateHorror(true);
+            me.CurrentBrotherState = new Alone();
         }
     }
     
@@ -46,16 +48,23 @@ public class WalkingPlayerController : MonoBehaviour {
                     return;
                 }
 
-                if (Vector3.Magnitude(me.transform.position - Game.Instance.getManager().brother.transform.position) < 1.0f)
-                {
-                    me.GetComponent<SpringJoint2D>().enabled = true;
-                    Game.Instance.getManager().setNightStateHorror(false);
-                    me.CurrentBrotherState = StatesArray[(int) States.withBrother];
-                }
+                TurnToWithBrother(me);
             }
         }
-    }
 
+        override public void TurnToWithBrother(WalkingPlayerController me)
+        {
+            if (Vector3.Magnitude(me.transform.position - Game.Instance.getManager().brother.transform.position) < 1.0f)
+            {
+                me.GetComponent<SpringJoint2D>().enabled = true;
+                Game.Instance.getManager().setNightStateHorror(false);
+                me.CurrentBrotherState = new WithBrother();
+            }
+        }
+    
+        
+    }
+    
     #endregion
 
 	
@@ -80,7 +89,7 @@ public class WalkingPlayerController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        currentBrotherState = State.StatesArray [(int)State.States.withBrother];
+        currentBrotherState = new WithBrother();
 	}
 	
 	// Update is called once per frame
@@ -149,6 +158,11 @@ public class WalkingPlayerController : MonoBehaviour {
     public void Die()
     {
         Debug.LogError("DEATH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+    }
+
+    public void LetGoOfBrother()
+    {
+        currentBrotherState.TurnToAlone(this);
     }
 
     /*public void PointTowardsMovementDirection()
