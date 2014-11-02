@@ -61,6 +61,8 @@ public class PatrolingEnemyController : MonoBehaviour {
     }
     #endregion
 
+    const float killRadius = 0.3f;
+
 	[SerializeField]
 	float agroRadius = 1.0f;
 
@@ -128,18 +130,28 @@ public class PatrolingEnemyController : MonoBehaviour {
 
 	public bool EnemyNearby()
 	{
-		if (Vector3.Distance (Game.Instance.getManager().player.transform.position, transform.position) < agroRadius) 
+        bool result = false;
+
+        float distToPlayer = Vector3.Distance(Game.Instance.getManager().player.transform.position, transform.position);
+        if (distToPlayer < agroRadius) 
 		{
 			enemyPos = Game.Instance.getManager().player.transform.position;
-			return true;
-		}
-		if (Vector3.Distance (Game.Instance.getManager().brother.transform.position, transform.position) < agroRadius) 
-		{
-			enemyPos = Game.Instance.getManager().brother.transform.position;
-			return true;
+            result = true;
 		}
 
-		return false;
+        float distToPlayerBrother = Vector3.Distance(Game.Instance.getManager().brother.transform.position, transform.position); 
+        if (distToPlayerBrother < agroRadius) 
+		{
+			enemyPos = Game.Instance.getManager().brother.transform.position;
+            result = true;
+		}
+
+        if (Mathf.Min(distToPlayer, distToPlayerBrother) < killRadius)
+        {
+            Game.Instance.getManager().player.GetComponent<WalkingPlayerController>().Die();
+        }
+
+		return result;
 	}
 
 	public bool DistanceIsClose()
