@@ -62,9 +62,12 @@ public class Activatable : MonoBehaviour {
 	}
 
     void setImageOpactiy(float opacity){
-        Color color = img.renderer.material.color;
-        color.a = opacity;
-        img.renderer.material.color = color;
+        if (img)
+        {
+            Color color = img.renderer.material.color;
+            color.a = opacity;
+            img.renderer.material.color = color;
+        }
     }
 
     /*

@@ -46,6 +46,7 @@ public class TileContainer : MonoBehaviour {
         yield return new WaitForSeconds(_delay);
         // disable input
         Game.Instance.setControlsEnabled(false);
+        Game.Instance.setHandsChangeEnabled(false);
         // show borders
         Game.Instance.getManager().setBordersVisible(true);
     }
@@ -58,6 +59,7 @@ public class TileContainer : MonoBehaviour {
         Game.Instance.setControlsEnabled(true);
         // hide borders
         Game.Instance.getManager().setBordersVisible(false);
+        Game.Instance.setHandsChangeEnabled(true);
     }
 
 }

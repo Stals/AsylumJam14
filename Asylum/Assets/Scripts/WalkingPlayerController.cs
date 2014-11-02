@@ -83,7 +83,7 @@ public class WalkingPlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        if (Game.Instance.isControlsEnabled())
+        if (Game.Instance.isHandsChangeEnabled())
         {
             currentBrotherState.Update(this);	
         }
