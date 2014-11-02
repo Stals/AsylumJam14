@@ -3699,6 +3699,8 @@ MonoBehaviour:
   isPressable: 1
   isOnce: 1
   objectToDisable: {fileID: 310979714}
+  bg: {fileID: 0}
+  bgChanged: {fileID: 0}
 --- !u!58 &1229341627
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4915,6 +4917,8 @@ MonoBehaviour:
   isPressable: 1
   isOnce: 1
   objectToDisable: {fileID: 1168967059}
+  bg: {fileID: 1383253728}
+  bgChanged: {fileID: 21300000, guid: eefaf7cb6c920495ca719925c6d508f4, type: 3}
 --- !u!1 &1571105031
 GameObject:
   m_ObjectHideFlags: 0

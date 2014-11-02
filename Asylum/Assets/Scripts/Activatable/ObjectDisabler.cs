@@ -6,6 +6,12 @@ public class ObjectDisabler : Activatable {
     [SerializeField]
     GameObject objectToDisable;
 
+    [SerializeField]
+    SpriteRenderer bg;
+
+    [SerializeField]
+    Sprite bgChanged;
+
 	// Use this for initialization
 	void Start () {
         init();
@@ -20,6 +26,7 @@ public class ObjectDisabler : Activatable {
         if (objectToDisable)
         {
             objectToDisable.SetActive(false);
+            bg.sprite = bgChanged;
         }
     }
 }
