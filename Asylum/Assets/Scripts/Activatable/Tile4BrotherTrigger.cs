@@ -30,7 +30,7 @@ public class Tile4BrotherTrigger : Activatable {
             if (Input.GetKeyDown(KeyCode.Tab)) 
             {
                 StartCoroutine(tile.endCutscene(0.1f));
-                Game.Instance.getManager().setHintVisible(false);
+                Game.Instance.getManager().setLetGoHintVisible(false);
                 // двигаем брата
                 // hide text to press button
             }
@@ -57,6 +57,6 @@ public class Tile4BrotherTrigger : Activatable {
         // show label with text to press button
 
         Game.Instance.getManager().setBordersVisible(true);
-        Game.Instance.getManager().setHintVisible(true);
+        Game.Instance.getManager().setLetGoHintVisible(true);
     }
 }

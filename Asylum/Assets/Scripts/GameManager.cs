@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour {
     GameObject letGoHint;
 
     [SerializeField]
+    GameObject holdHandHint;
+
+    [SerializeField]
     public GameObject particles;
 
     [SerializeField]
@@ -98,9 +101,14 @@ public class GameManager : MonoBehaviour {
         NightDependantBehavior.ChangeNight(isHorror);
     }
 
-    public void setHintVisible(bool visible)
+    public void setLetGoHintVisible(bool visible)
     {
         letGoHint.SetActive(visible);
+    }
+
+    public void setHoldHintVisible(bool visible)
+    {
+        holdHandHint.SetActive(visible);
     }
 
     public void shake()
