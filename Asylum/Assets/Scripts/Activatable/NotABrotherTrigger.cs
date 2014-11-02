@@ -46,11 +46,11 @@ public class NotABrotherTrigger : Activatable {
         tile.sayText("sister?", 1f, brotherVoice);
 
 
-        player.transform.parent = tile.transform;
+        player.transform.parent = tile8.transform;
         player.transform.position = teleportLocation.transform.position;
         
-        tile.moveCamera();
-        tile.tileEntered();
+        tile8.moveCamera();
+        tile8.tileEntered();
         
         // show witch
         //if(bg && bgChanged){
