@@ -33,6 +33,7 @@ public class WalkingPlayerController : MonoBehaviour {
             Game.Instance.getManager().setNightStateHorror(true);
             me.CurrentBrotherState = new Alone();
             Game.Instance.getManager().brother.GetComponent<Rigidbody2D>().isKinematic = true;
+            me.changeLightOpacity(0.78f);
 
         }
     }
@@ -62,7 +63,7 @@ public class WalkingPlayerController : MonoBehaviour {
                 Game.Instance.getManager().setNightStateHorror(false);
                 me.CurrentBrotherState = new WithBrother();
                 Game.Instance.getManager().brother.GetComponent<Rigidbody2D>().isKinematic = false;
-
+                me.changeLightOpacity(0.5f);
             }
         }
     
@@ -84,6 +85,16 @@ public class WalkingPlayerController : MonoBehaviour {
     Vector3 currentPosition;
 
     State currentBrotherState;
+
+    [SerializeField]
+    SpriteRenderer lightCircleLight;
+
+    public void changeLightOpacity(float opacity)
+    {
+        Color color = lightCircleLight.color;// renderer.material.color;
+        color.a = opacity;
+        lightCircleLight.color = color;
+    }
 
     public State CurrentBrotherState
     {

@@ -33,7 +33,7 @@ public class BrotherController : MonoBehaviour {
     public class RunningFromSister : State
     {
         Vector3 target = new Vector3(33.23638f, 5f, 0);
-        public float speed = 1.5f;
+        public float speed = 3f;
 
         override public void Update(BrotherController me)
         {
