@@ -54,5 +54,7 @@ public class Tile4BrotherTrigger : Activatable {
         Game.Instance.setReachedHandsAbility(true);
         Game.Instance.setHandsChangeEnabled(true);
         // show label with text to press button
+
+        Game.Instance.getManager().setBordersVisible(true);
     }
 }
