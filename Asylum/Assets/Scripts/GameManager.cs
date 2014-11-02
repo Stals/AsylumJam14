@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour {
 	//[SerializeField]
 	//GameOverController gameOverController;
     
-	//CameraShake cameraShake;
+	CameraShake cameraShake;
    
 
 	// Use this for initialization
@@ -46,6 +46,8 @@ public class GameManager : MonoBehaviour {
 		//cameraShake = Camera.main.gameObject.AddComponent("CameraShake") as CameraShake;
 		//currentLevelLabel.text = "Level: " + (Game.Instance.getCurrentLevelID () + 1).ToString();
 		//currentLevelState = LevelState.Running;
+
+        cameraShake = Camera.main.gameObject.AddComponent("CameraShake") as CameraShake;
 	}
 
     public IEnumerator startGame() {
@@ -53,6 +55,14 @@ public class GameManager : MonoBehaviour {
         firstTile.tileEntered();
     }
 	
+    void FixedUpdate()
+    {
+        if (Game.Instance.HorrorNight)
+        {
+            shake();
+        }
+    }
+
 	// Update is called once per frame
 	void Update () {
         // TODO if button pressed -change world
@@ -84,5 +94,10 @@ public class GameManager : MonoBehaviour {
     public void setHintVisible(bool visible)
     {
         letGoHint.SetActive(visible);
+    }
+
+    public void shake()
+    {
+        cameraShake.Shake (0.05f, 0.02f);
     }
 }

@@ -102,7 +102,7 @@ MonoBehaviour:
   moveDown: 274
   moveLeft: 276
   moveRight: 275
-  speed: {x: .0500000007, y: .0500000007}
+  speed: {x: .0350000001, y: .0350000001}
   lastV: {x: 0, y: 0, z: 0}
   lightCircleLight: {fileID: 21200002}
 --- !u!212 &21200000
@@ -148,7 +148,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingOrder: 133
   m_Sprite: {fileID: 21300000, guid: 9b846e5c275c64a7fae49820c9bdb906, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: .768627465}
+  m_Color: {r: 1, g: 1, b: 1, a: .498039216}
 --- !u!231 &23100000
 SpringJoint2D:
   m_ObjectHideFlags: 1
