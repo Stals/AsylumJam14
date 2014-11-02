@@ -26,7 +26,9 @@ public class ObjectDisabler : Activatable {
         if (objectToDisable)
         {
             objectToDisable.SetActive(false);
-            bg.sprite = bgChanged;
+            if(bg && bgChanged){
+                bg.sprite = bgChanged;
+            }
         }
     }
 }
