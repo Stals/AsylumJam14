@@ -896,7 +896,7 @@ SpriteRenderer:
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5b07fef702df84a84920867fb72ec68b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0a4af565948e14fadaa37a8f7dda0e80, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!1 &207131337
 GameObject:
@@ -1266,7 +1266,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 310979714}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.53212166, y: 1.85111189, z: 0}
+  m_LocalPosition: {x: 2.53212166, y: 2.6516943, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1119967139}
@@ -1295,7 +1295,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 317751383}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.53212166, y: 3.22734022, z: 0}
+  m_LocalPosition: {x: 2.53212166, y: 4.02792215, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1119967139}
@@ -4742,7 +4742,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1229341623}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 3.5170536, y: 2.16853285, z: 0}
+  m_LocalPosition: {x: 4.08413887, y: 2.4956975, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1119967139}
@@ -4776,8 +4776,8 @@ MonoBehaviour:
   isPressable: 1
   isOnce: 1
   objectToDisable: {fileID: 310979714}
-  bg: {fileID: 0}
-  bgChanged: {fileID: 0}
+  bg: {fileID: 196270961}
+  bgChanged: {fileID: 21300000, guid: 0a4af565948e14fadaa37a8f7dda0e80, type: 3}
 --- !u!58 &1229341627
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -5891,7 +5891,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1485112164}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.53212166, y: -.36583519, z: 0}
+  m_LocalPosition: {x: 2.53212166, y: .434745789, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1119967139}
