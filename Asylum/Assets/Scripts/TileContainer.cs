@@ -40,6 +40,14 @@ public class TileContainer : MonoBehaviour {
         Game.Instance.getManager().Speak(text, 0, speaker);
     }
 
+    public IEnumerator changeBrotherState(BrotherController.State state, float delay){
+        _delay += delay;
+        yield return new WaitForSeconds(_delay);
+
+        BrotherController brother = Game.Instance.getManager().brother.GetComponent<BrotherController>();
+        brother.setState(state);
+    }
+
     public IEnumerator startCutscene(float delay){
         _delay += delay;
   
