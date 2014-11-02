@@ -29,8 +29,8 @@ public class BrotherController : MonoBehaviour {
 
     public class RunningFromSister : State
     {
-        Vector3 target = new Vector3(5, 5, 0);
-        public float speed = 0.1f;
+        Vector3 target = new Vector3(5, 0, 0);
+        public float speed = 1.5f;
 
         override public void Update(BrotherController me)
         {

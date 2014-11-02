@@ -44,6 +44,10 @@ public class TileContainer : MonoBehaviour {
         _delay += delay;
         yield return new WaitForSeconds(_delay);
 
+
+        WalkingPlayerController player = Game.Instance.getManager().player.GetComponent<WalkingPlayerController>();
+        player.LetGoOfBrother();
+
         BrotherController brother = Game.Instance.getManager().brother.GetComponent<BrotherController>();
         brother.setState(state);
     }

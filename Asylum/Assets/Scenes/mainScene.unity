@@ -2335,7 +2335,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 567122588}
-  speed: .0500000007
+  speed: .100000001
 --- !u!114 &725214156
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2401,6 +2401,10 @@ Prefab:
       value: 
       objectReference: {fileID: 21300000, guid: b1fd10b8456674ea1abfe6b5bf89545d,
         type: 3}
+    - target: {fileID: 11400000, guid: be83c848c2a1448bca193346d01b4431, type: 2}
+      propertyPath: speed
+      value: .100000001
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: be83c848c2a1448bca193346d01b4431, type: 2}
   m_RootGameObject: {fileID: 725214150}
