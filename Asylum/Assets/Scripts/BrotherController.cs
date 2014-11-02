@@ -3,6 +3,9 @@ using System.Collections;
 
 public class BrotherController : MonoBehaviour {
    
+    [SerializeField]
+    public Transform teleportLocation;
+
     public Transform target;//set target from inspector instead of looking in Update
     public float speed = 0.05f;
 
@@ -29,7 +32,7 @@ public class BrotherController : MonoBehaviour {
 
     public class RunningFromSister : State
     {
-        Vector3 target = new Vector3(33.23638f, -5f, 0);
+        Vector3 target = new Vector3(33.23638f, 5f, 0);
         public float speed = 1.5f;
 
         override public void Update(BrotherController me)
@@ -41,6 +44,7 @@ public class BrotherController : MonoBehaviour {
             {
                 //TODO teleport and change tile
                 me.setState(new Normal());
+                me.transform.position = me.teleportLocation.position;
             }
 
             me.transform.LookAt(target);

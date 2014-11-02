@@ -24,24 +24,31 @@ public class ExitController : MonoBehaviour {
     }
 
 	void OnTriggerEnter2D(Collider2D coll) {
-		if (isTriggered) {
-			return;
-		}
+        if (coll.gameObject.tag == "Player") {
 
-		if (!connectedExit) {
-			return;
-		}
+    		if (isTriggered) {
+    			return;
+    		}
 
-		coll.transform.parent = connectedExit.transform.parent;
-		coll.transform.position = connectedExit.transform.position;
+    		if (!connectedExit) {
+    			return;
+    		}
 
-		connectedExit.GetComponent<ExitController> ().setTriggered(true);
-        TileContainer tile = connectedExit.transform.parent.GetComponent<TileContainer>();
-        tile.moveCamera();
-        tile.tileEntered();
+    		coll.transform.parent = connectedExit.transform.parent;
+    		coll.transform.position = connectedExit.transform.position;
 
-		/*if (coll.gameObject.tag == "Line") {
-		}*/
+    		connectedExit.GetComponent<ExitController> ().setTriggered(true);
+            TileContainer tile = connectedExit.transform.parent.GetComponent<TileContainer>();
+            tile.moveCamera();
+            tile.tileEntered();
+
+              WalkingPlayerController player = Game.Instance.getManager().player.GetComponent<WalkingPlayerController>();
+              BrotherController brother = Game.Instance.getManager().brother.GetComponent<BrotherController>();
+
+            if(player.CurrentBrotherState is WalkingPlayerController.WithBrother){
+                //brother.transform = 
+            }
+        }
 	}
 
     void OnTriggerExit2D(Collider2D coll) {
