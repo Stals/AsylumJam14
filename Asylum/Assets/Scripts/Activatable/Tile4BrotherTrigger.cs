@@ -29,7 +29,7 @@ public class Tile4BrotherTrigger : Activatable {
 
             if (Input.GetKeyDown(KeyCode.Tab)) 
             {
-                StartCoroutine(tile.endCutscene(0f));
+                StartCoroutine(tile.endCutscene(0.1f));
                 // двигаем брата
                 // hide text to press button
             }
