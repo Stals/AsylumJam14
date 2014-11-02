@@ -30,6 +30,12 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     GameObject letGoHint;
 
+    [SerializeField]
+    public GameObject particles;
+
+    [SerializeField]
+    public GameObject effectsController;
+
 	//[SerializeField]
 	//GameOverController gameOverController;
     

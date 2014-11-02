@@ -3263,7 +3263,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &917795312
 Transform:
   m_ObjectHideFlags: 0
@@ -6259,6 +6259,8 @@ MonoBehaviour:
   firstTile: {fileID: 1997014301}
   blackBorders: {fileID: 1237190735}
   letGoHint: {fileID: 1020206306}
+  particles: {fileID: 917795311}
+  effectsController: {fileID: 350127630}
 --- !u!4 &1824017981
 Transform:
   m_ObjectHideFlags: 0
@@ -7435,6 +7437,14 @@ Prefab:
       propertyPath: m_RootMapOrder
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 474b50c0f49e5504783a26271900c8a1, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 474b50c0f49e5504783a26271900c8a1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 474b50c0f49e5504783a26271900c8a1, type: 2}
   m_RootGameObject: {fileID: 917795311}
@@ -7536,7 +7546,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2110472005
 Transform:
   m_ObjectHideFlags: 0
@@ -7702,6 +7712,14 @@ Prefab:
       propertyPath: letGoHint
       value: 
       objectReference: {fileID: 1020206306}
+    - target: {fileID: 11400000, guid: 65c60577356b3480a9f69e11ec803fe3, type: 2}
+      propertyPath: effectsController
+      value: 
+      objectReference: {fileID: 350127630}
+    - target: {fileID: 11400000, guid: 65c60577356b3480a9f69e11ec803fe3, type: 2}
+      propertyPath: particles
+      value: 
+      objectReference: {fileID: 917795311}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65c60577356b3480a9f69e11ec803fe3, type: 2}
   m_RootGameObject: {fileID: 1824017979}
