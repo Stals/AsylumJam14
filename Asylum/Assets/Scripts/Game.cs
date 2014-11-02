@@ -22,6 +22,13 @@ public class Game  {
     bool controlsEnabled;
     bool handsChangeEnabled;
     bool reachedHandsAbility;
+    bool isHorrorNight = false;
+
+    public bool HorrorNight
+    {
+        get {return isHorrorNight;}
+        set {isHorrorNight = value;}
+    }
 
 
 	public void init(GameManager _manager)
@@ -67,4 +74,6 @@ public class Game  {
 	{
 		return manager;
 	}
+
+
 }

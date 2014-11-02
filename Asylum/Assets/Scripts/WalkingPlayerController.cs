@@ -27,6 +27,7 @@ public class WalkingPlayerController : MonoBehaviour {
             {
                 loneliness = 120;
                 me.GetComponent<SpringJoint2D>().enabled = false;
+                Game.Instance.getManager().setNightStateHorror(true);
                 me.CurrentBrotherState = StatesArray[(int) States.alone];
             }
         }
@@ -48,6 +49,7 @@ public class WalkingPlayerController : MonoBehaviour {
                 if (Vector3.Magnitude(me.transform.position - Game.Instance.getManager().brother.transform.position) < 1.0f)
                 {
                     me.GetComponent<SpringJoint2D>().enabled = true;
+                    Game.Instance.getManager().setNightStateHorror(false);
                     me.CurrentBrotherState = StatesArray[(int) States.withBrother];
                 }
             }

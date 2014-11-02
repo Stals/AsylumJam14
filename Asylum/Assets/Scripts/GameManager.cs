@@ -71,4 +71,10 @@ public class GameManager : MonoBehaviour {
     {
         blackBorders.SetActive(v);
     }
+
+    public void setNightStateHorror(bool isHorror)
+    {
+        Game.Instance.HorrorNight = isHorror;
+        NightDependantBehavior.ChangeNight(isHorror);
+    }
 }
