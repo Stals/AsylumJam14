@@ -741,6 +741,97 @@ MonoBehaviour:
   mMaxLineHeight: 0
   mLineWidth: 0
   mMultiline: 1
+--- !u!1 &229342104
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 100000, guid: 3a8b0396d20804e529e3f27de54cb713, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 229342105}
+  - 114: {fileID: 229342106}
+  m_Layer: 5
+  m_Name: label
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &229342105
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 400000, guid: 3a8b0396d20804e529e3f27de54cb713, type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 229342104}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 332, y: -323, z: 0}
+  m_LocalScale: {x: 1.00007999, y: 1.00007999, z: 1.00007999}
+  m_Children: []
+  m_Father: {fileID: 1020206307}
+  m_RootOrder: 0
+--- !u!114 &229342106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 11400000, guid: 3a8b0396d20804e529e3f27de54cb713,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 229342104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9d0b5f3bbe925a408bd595c79d0bf63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  leftAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  rightAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  bottomAnchor:
+    target: {fileID: 0}
+    relative: 0
+    absolute: 0
+  topAnchor:
+    target: {fileID: 0}
+    relative: 1
+    absolute: 0
+  updateAnchors: 1
+  mColor: {r: 1, g: 1, b: 1, a: 1}
+  mPivot: 4
+  mWidth: 316
+  mHeight: 74
+  mDepth: 0
+  autoResizeBoxCollider: 0
+  hideIfOffScreen: 0
+  keepAspectRatio: 0
+  aspectRatio: 4.27027035
+  keepCrispWhenShrunk: 1
+  mTrueTypeFont: {fileID: 0}
+  mFont: {fileID: 11400000, guid: 29056518aafb01b49a5b08faf8e30cff, type: 2}
+  mText: Press TAB to let go
+  mFontSize: 30
+  mFontStyle: 0
+  mAlignment: 0
+  mEncoding: 1
+  mMaxLineCount: 0
+  mEffectStyle: 2
+  mEffectColor: {r: 0, g: 0, b: 0, a: 1}
+  mSymbols: 1
+  mEffectDistance: {x: 2, y: 2}
+  mOverflow: 0
+  mMaterial: {fileID: 0}
+  mApplyGradient: 1
+  mGradientTop: {r: 1, g: 1, b: 1, a: 1}
+  mGradientBottom: {r: 1, g: 1, b: 1, a: 1}
+  mSpacingX: 0
+  mSpacingY: 0
+  mShrinkToFit: 0
+  mMaxLineWidth: 0
+  mMaxLineHeight: 0
+  mLineWidth: 0
+  mMultiline: 1
 --- !u!1 &249539229
 GameObject:
   m_ObjectHideFlags: 0
@@ -3305,7 +3396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1020206307
 Transform:
   m_ObjectHideFlags: 0
@@ -3315,7 +3406,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 229342105}
   m_Father: {fileID: 68680871}
   m_RootOrder: 5
 --- !u!114 &1020206308
@@ -5513,7 +5605,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 3a8b0396d20804e529e3f27de54cb713, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 11400022, guid: 3a8b0396d20804e529e3f27de54cb713, type: 2}
       propertyPath: gameCamera
@@ -5531,6 +5623,10 @@ Prefab:
       propertyPath: gameCamera
       value: 
       objectReference: {fileID: 488035895}
+    - target: {fileID: 100020, guid: 3a8b0396d20804e529e3f27de54cb713, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a8b0396d20804e529e3f27de54cb713, type: 2}
   m_RootGameObject: {fileID: 68680870}
@@ -6029,6 +6125,7 @@ MonoBehaviour:
   speechPanel: {fileID: 2114664136}
   firstTile: {fileID: 1997014301}
   blackBorders: {fileID: 1237190735}
+  letGoHint: {fileID: 1020206306}
 --- !u!4 &1824017981
 Transform:
   m_ObjectHideFlags: 0
@@ -7184,6 +7281,10 @@ Prefab:
       propertyPath: blackBorders
       value: 
       objectReference: {fileID: 1237190735}
+    - target: {fileID: 11400000, guid: 65c60577356b3480a9f69e11ec803fe3, type: 2}
+      propertyPath: letGoHint
+      value: 
+      objectReference: {fileID: 1020206306}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 65c60577356b3480a9f69e11ec803fe3, type: 2}
   m_RootGameObject: {fileID: 1824017979}

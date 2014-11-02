@@ -27,6 +27,9 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     GameObject blackBorders;
 
+    [SerializeField]
+    GameObject letGoHint;
+
 	//[SerializeField]
 	//GameOverController gameOverController;
     
@@ -76,5 +79,10 @@ public class GameManager : MonoBehaviour {
     {
         Game.Instance.HorrorNight = isHorror;
         NightDependantBehavior.ChangeNight(isHorror);
+    }
+
+    public void setHintVisible(bool visible)
+    {
+        letGoHint.SetActive(visible);
     }
 }
