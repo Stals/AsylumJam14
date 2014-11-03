@@ -25,7 +25,9 @@ public class Tile9Controller : TileContainer {
             sayText("i thought i lost you", 1f, brother);
             sayText("all ok", 1f, player);
 
-    // i thought i lost you
+/*
+inside activate - look at father = false
+             */
         }
 
     }

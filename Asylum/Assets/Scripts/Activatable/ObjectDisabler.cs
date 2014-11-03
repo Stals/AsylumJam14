@@ -26,14 +26,12 @@ public class ObjectDisabler : Activatable {
 	}
 
     override protected void activate(){
-        if (objectToDisable)
-        {
-            if(objectToDisable){
-                objectToDisable.SetActive(resultActive);
-            }
-            if(bg && bgChanged){
-                bg.sprite = bgChanged;
-            }
+
+        if(objectToDisable){
+            objectToDisable.SetActive(resultActive);
+        }
+        if(bg && bgChanged){
+            bg.sprite = bgChanged;
         }
     }
 }

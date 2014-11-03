@@ -102,6 +102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _delay: 0
+  father: {fileID: 0}
 --- !u!4 &55720088
 Transform:
   m_ObjectHideFlags: 0
@@ -709,7 +710,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPressable: 0
   isOnce: 1
-  objectToDisable: {fileID: 310979714}
+  objectToDisable: {fileID: 177063810}
   bg: {fileID: 699201399}
   bgChanged: {fileID: 21300000, guid: a8bc19b5d9de74501b004bb0a363f07e, type: 3}
   resultActive: 1
@@ -3276,7 +3277,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 651020825}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.98513031, y: -2.36750698, z: 0}
+  m_LocalPosition: {x: 2.98461151, y: -2.37662983, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1299618884}
