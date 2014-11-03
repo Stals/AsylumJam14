@@ -49,7 +49,7 @@ public class NotABrotherTrigger : Activatable {
     override protected void activate(){
         // brother voice
         tile.startCutscene(0);
-        tile.sayText("I’m scared, where are you!", 0.3f, brotherVoice);
+        tile.sayText("I’m scared, where are you!", 1f, brotherVoice);
 
         StartCoroutine(tile.changeImage(1.5f, fakeBrother, witchSprite));
         StartCoroutine(tile.playSound(0.01f, audio));

@@ -7597,7 +7597,7 @@ MonoBehaviour:
   isOnce: 1
   brotherVoice: {fileID: 117444333}
   teleportLocation: {fileID: 165334736}
-  tile8: {fileID: 0}
+  tile8: {fileID: 176505078}
   fakeBrother: {fileID: 380609386}
   witchSprite: {fileID: 21300000, guid: 3c0f284b98ebf4c91acf98c0e70049f2, type: 3}
 --- !u!50 &1513720839
