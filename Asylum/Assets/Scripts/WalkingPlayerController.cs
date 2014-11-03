@@ -14,6 +14,22 @@ public class WalkingPlayerController : MonoBehaviour {
         virtual public void TurnToWithBrother(WalkingPlayerController me)
         {}
 
+        public void NormalState(WalkingPlayerController me)
+        {
+            me.changeLightOpacity(0.5f);
+            Game.Instance.getManager().particlesHorror.SetActive(false);
+            Game.Instance.getManager().particlesBlack.SetActive(true);
+            Game.Instance.getManager().setNightStateHorror(false);
+        }
+
+        public void HorrorState(WalkingPlayerController me)
+        {
+            me.changeLightOpacity(0.78f);
+            Game.Instance.getManager().particlesHorror.SetActive(true);
+            Game.Instance.getManager().particlesBlack.SetActive(false);
+            Game.Instance.getManager().setNightStateHorror(true);
+        }
+
 
     }
     
@@ -33,25 +49,23 @@ public class WalkingPlayerController : MonoBehaviour {
         {
             loneliness = 120;
             me.GetComponent<SpringJoint2D>().enabled = false;
-            Game.Instance.getManager().setNightStateHorror(true);
             me.CurrentBrotherState = new Alone();
             Game.Instance.getManager().brother.GetComponent<Rigidbody2D>().isKinematic = true;
-            me.changeLightOpacity(0.78f);
-            Game.Instance.getManager().particlesHorror.SetActive(true);
-            Game.Instance.getManager().particlesBlack.SetActive(false);
+            HorrorState(me);
             
         }
 
         public void turnEffectsOffOnLastTile(WalkingPlayerController me)
         {
-            if (me.isInForestTile())
+            if (!me.isInForestTile())
             {
                 Game.Instance.getManager().particlesHorror.SetActive(false);
                 Game.Instance.getManager().particlesBlack.SetActive(false);
+                me.changeLightOpacity(0.0f);
             } else
             {
-                Game.Instance.getManager().particlesHorror.SetActive(true);
-                Game.Instance.getManager().particlesBlack.SetActive(false);
+                NormalState(me);
+
             }
         }
     }
@@ -88,26 +102,24 @@ public class WalkingPlayerController : MonoBehaviour {
         {
 
                 me.GetComponent<SpringJoint2D>().enabled = true;
-                Game.Instance.getManager().setNightStateHorror(false);
                 me.CurrentBrotherState = new WithBrother();
                 Game.Instance.getManager().brother.GetComponent<Rigidbody2D>().isKinematic = false;
-                me.changeLightOpacity(0.5f);
-                Game.Instance.getManager().particlesHorror.SetActive(false);
-                Game.Instance.getManager().particlesBlack.SetActive(true);
+            NormalState(me);
+
             
         }
-
         
         public void turnEffectsOffOnLastTile(WalkingPlayerController me)
         {
-            if (me.isInForestTile())
+            if (!me.isInForestTile())
             {
                 Game.Instance.getManager().particlesHorror.SetActive(false);
                 Game.Instance.getManager().particlesBlack.SetActive(false);
+                me.changeLightOpacity(0.0f);
             } else
             {
-                Game.Instance.getManager().particlesHorror.SetActive(false);
-                Game.Instance.getManager().particlesBlack.SetActive(true);
+                HorrorState(me);
+
             }
         }
     
