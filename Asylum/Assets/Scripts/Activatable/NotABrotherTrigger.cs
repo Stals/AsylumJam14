@@ -45,7 +45,7 @@ public class NotABrotherTrigger : Activatable {
         tile.startCutscene(0);
         tile.sayText("sister?", 1f, brotherVoice);
 
-
+        // TODO do this with CD
         player.transform.parent = tile8.transform;
         player.transform.position = teleportLocation.transform.position;
         
