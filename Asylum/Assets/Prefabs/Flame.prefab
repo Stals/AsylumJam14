@@ -133,7 +133,7 @@ ParticleAnimator:
     rgba: 319030280
   colorAnimation[2]:
     serializedVersion: 2
-    rgba: 83886080
+    rgba: 1761607680
   colorAnimation[3]:
     serializedVersion: 2
     rgba: 218103808
@@ -142,7 +142,7 @@ ParticleAnimator:
     rgba: 0
   worldRotationAxis: {x: 0, y: 0, z: 0}
   localRotationAxis: {x: 0, y: 0, z: 0}
-  sizeGrow: -.300000012
+  sizeGrow: -.00300000003
   rndForce: {x: 0, y: 0, z: 0}
   force: {x: 0, y: 0, z: 0}
   damping: .980000019
@@ -187,19 +187,19 @@ EllipsoidParticleEmitter:
   serializedVersion: 2
   m_Enabled: 1
   m_Emit: 1
-  minSize: 9.86999989
-  maxSize: 10.3900003
-  minEnergy: 1
-  maxEnergy: 1
-  minEmission: 30
-  maxEmission: 30
-  worldVelocity: {x: .50999999, y: 0, z: 0}
-  localVelocity: {x: .100000001, y: .109999999, z: 0}
-  rndVelocity: {x: .25, y: .0799999982, z: 0}
+  minSize: 9
+  maxSize: 10
+  minEnergy: 5
+  maxEnergy: 10
+  minEmission: 2
+  maxEmission: 5
+  worldVelocity: {x: 0, y: 0, z: 0}
+  localVelocity: {x: .00999999978, y: .0109999999, z: 0}
+  rndVelocity: {x: .0500000007, y: .0799999982, z: 0}
   emitterVelocityScale: 0
   tangentVelocity: {x: 0, y: 0, z: 0}
-  angularVelocity: 20
-  rndAngularVelocity: -2
+  angularVelocity: .0500000007
+  rndAngularVelocity: -.100000001
   rndRotation: 0
   Simulate in Worldspace?: 0
   m_OneShot: 0

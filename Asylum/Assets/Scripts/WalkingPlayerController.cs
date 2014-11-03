@@ -96,6 +96,8 @@ public class WalkingPlayerController : MonoBehaviour {
 
     State currentBrotherState;
 
+    public bool lookingAtFather = false;
+
     [SerializeField]
     SpriteRenderer lightCircleLight;
 
@@ -123,6 +125,12 @@ public class WalkingPlayerController : MonoBehaviour {
         if (Game.Instance.isHandsChangeEnabled())
         {
             currentBrotherState.Update(this);	
+        }
+
+        if (lookingAtFather)
+        {
+            Vector3 v = Game.Instance.getManager().father.transform.position - transform.position;
+            turnTo(v);
         }
 	}
 
@@ -167,20 +175,28 @@ public class WalkingPlayerController : MonoBehaviour {
         
         this.transform.position  =  new Vector3(currentPosition.x + v.x, currentPosition.y + v.y);
 
-        if ((v.x != 0) || (v.y != 0))
+        if (!lookingAtFather)
         {
-
-            float rad = Mathf.Atan2(v.y, v.x);
-            float degrees = (rad / Mathf.PI) * 180.0f;
-
-            //Debug.Log(degrees);
-
-            Vector3 angles = transform.eulerAngles;
-            angles.z = degrees;
-
-            transform.eulerAngles = angles;
+            turnTo(v);
         }
 
+    }
+
+    void turnTo(Vector3 v)
+    {
+        if ((v.x != 0) || (v.y != 0))
+        {
+            
+            float rad = Mathf.Atan2(v.y, v.x);
+            float degrees = (rad / Mathf.PI) * 180.0f;
+            
+            //Debug.Log(degrees);
+            
+            Vector3 angles = transform.eulerAngles;
+            angles.z = degrees;
+            
+            transform.eulerAngles = angles;
+        }
     }
 
     public void Die()
