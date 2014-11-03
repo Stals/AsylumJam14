@@ -26,6 +26,24 @@ public class FatherBehavior : MonoBehaviour {
         Vector3 enemyPos = Game.Instance.getManager().player.transform.position;
         Vector3 vecToEnemy = enemyPos - transform.position;
         transform.position +=  speed * 1.0f / 60.0f * vecToEnemy.normalized;
-        transform.rotation = Quaternion.LookRotation(vecToEnemy);
+        turnTo(vecToEnemy);
+    }
+
+
+    void turnTo(Vector3 v)
+    {
+        if ((v.x != 0) || (v.y != 0))
+        {
+            
+            float rad = Mathf.Atan2(v.y, v.x);
+            float degrees = (rad / Mathf.PI) * 180.0f;
+            
+            //Debug.Log(degrees);
+            
+            Vector3 angles = transform.eulerAngles;
+            angles.z = degrees;
+            
+            transform.eulerAngles = angles;
+        }
     }
 }
