@@ -61,7 +61,9 @@ public class Tile10Controller : TileContainer {
             sayText("Hold my hand", 1f, player);
             sayText("All is gonna be allright", 1f, player);
 
-            StartCoroutine(endCutscene(0f));
+            //StartCoroutine(endCutscene(0f));
+
+
 
             // GAME OVER
         }
