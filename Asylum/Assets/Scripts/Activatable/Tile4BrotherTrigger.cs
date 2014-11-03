@@ -30,7 +30,7 @@ public class Tile4BrotherTrigger : Activatable {
             if (Input.GetKeyDown(KeyCode.Tab)) 
             {
                 StartCoroutine(tile.endCutscene(0.1f));
-                Game.Instance.getManager().setHintVisible(false);
+                Game.Instance.getManager().setLetGoHintVisible(false);
                 // двигаем брата
                 // hide text to press button
             }
@@ -45,18 +45,17 @@ public class Tile4BrotherTrigger : Activatable {
 
         tile.startCutscene(0);
 
-        StartCoroutine(tile.say("monsters", 0.5f, brother));
-        StartCoroutine(tile.say("me stay=)", 0.5f, brother));
-        StartCoroutine(tile.say("ok", 1f, player));
-        StartCoroutine(tile.say("lets separate", 1f, player));
+        tile.sayText("monsters", 0.5f, brother);
+        tile.sayText("me stay=)", 0.5f, brother);
+        tile.sayText("ok", 1f, player);
+        tile.sayText("lets separate", 0.1f, player);
 
-        StartCoroutine(tile.say("", 1f, player));
 
         Game.Instance.setReachedHandsAbility(true);
         Game.Instance.setHandsChangeEnabled(true);
         // show label with text to press button
 
         Game.Instance.getManager().setBordersVisible(true);
-        Game.Instance.getManager().setHintVisible(true);
+        Game.Instance.getManager().setLetGoHintVisible(true);
     }
 }

@@ -43,30 +43,38 @@ public class WalkingPlayerController : MonoBehaviour {
     {
         override public void Update(WalkingPlayerController me)
         {
-            if (Input.GetKeyDown(KeyCode.Tab)) 
-            {
-                loneliness--;
-                if (loneliness < 0)
-                {
-                    me.Die();
-                    return;
-                }
 
-                TurnToWithBrother(me);
+            //loneliness--;
+            //if (loneliness < 0)
+            //{
+            //    me.Die();
+            //    return;
+            //}
+
+
+            if (Vector3.Magnitude(me.transform.position - Game.Instance.getManager().brother.transform.position) < 1.0f)
+            {
+                Game.Instance.getManager().setHoldHintVisible(true);
+                if (Input.GetKeyDown(KeyCode.Tab)) 
+                {
+                    TurnToWithBrother(me);
+                    Game.Instance.getManager().setHoldHintVisible(false);
+                }
+            }else{
+                Game.Instance.getManager().setHoldHintVisible(false);
             }
         }
 
         override public void TurnToWithBrother(WalkingPlayerController me)
         {
-            if (Vector3.Magnitude(me.transform.position - Game.Instance.getManager().brother.transform.position) < 1.0f)
-            {
+
                 me.GetComponent<SpringJoint2D>().enabled = true;
                 Game.Instance.getManager().setNightStateHorror(false);
                 me.CurrentBrotherState = new WithBrother();
                 Game.Instance.getManager().brother.GetComponent<Rigidbody2D>().isKinematic = false;
                 me.changeLightOpacity(0.5f);
                 Game.Instance.getManager().particles.SetActive(false);
-            }
+            
         }
     
         

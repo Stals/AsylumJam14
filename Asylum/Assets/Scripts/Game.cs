@@ -36,7 +36,7 @@ public class Game  {
 		manager = _manager;
         controlsEnabled = true;
         handsChangeEnabled = true;
-        reachedHandsAbility = true;
+        reachedHandsAbility = false;
 	}
 
     public void setControlsEnabled(bool e)

@@ -31,6 +31,9 @@ public class GameManager : MonoBehaviour {
     GameObject letGoHint;
 
     [SerializeField]
+    GameObject holdHandHint;
+
+    [SerializeField]
     public GameObject particles;
 
     [SerializeField]
@@ -39,7 +42,7 @@ public class GameManager : MonoBehaviour {
 	//[SerializeField]
 	//GameOverController gameOverController;
     
-	//CameraShake cameraShake;
+	CameraShake cameraShake;
    
 
 	// Use this for initialization
@@ -52,6 +55,8 @@ public class GameManager : MonoBehaviour {
 		//cameraShake = Camera.main.gameObject.AddComponent("CameraShake") as CameraShake;
 		//currentLevelLabel.text = "Level: " + (Game.Instance.getCurrentLevelID () + 1).ToString();
 		//currentLevelState = LevelState.Running;
+
+        cameraShake = Camera.main.gameObject.AddComponent("CameraShake") as CameraShake;
 	}
 
     public IEnumerator startGame() {
@@ -59,6 +64,15 @@ public class GameManager : MonoBehaviour {
         firstTile.tileEntered();
     }
 	
+    void FixedUpdate()
+    {
+        if (Game.Instance.HorrorNight)
+        {
+            // добавить base туда - и при смене локации менять 
+            shake();
+        }
+    }
+
 	// Update is called once per frame
 	void Update () {
         // TODO if button pressed -change world
@@ -87,8 +101,23 @@ public class GameManager : MonoBehaviour {
         NightDependantBehavior.ChangeNight(isHorror);
     }
 
-    public void setHintVisible(bool visible)
+    public void setLetGoHintVisible(bool visible)
     {
         letGoHint.SetActive(visible);
+    }
+
+    public void setHoldHintVisible(bool visible)
+    {
+        holdHandHint.SetActive(visible);
+    }
+
+    public void shake()
+    {
+        cameraShake.Shake (0.02f, 0.02f);
+    }
+
+    public void stopShake()
+    {
+        cameraShake.stopShake();
     }
 }

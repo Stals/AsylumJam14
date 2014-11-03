@@ -17,7 +17,8 @@ public class TileContainer : MonoBehaviour {
 
 	public void moveCamera()
 	{
-		Camera.main.transform.position = new Vector3 (transform.position.x,transform.position.y,Camera.main.transform.position.z);
+        Game.Instance.getManager().stopShake();
+		Camera.main.transform.position = new Vector3 (transform.position.x,transform.position.y, -10);
 	}
 
     public virtual void tileEntered()
@@ -28,17 +29,31 @@ public class TileContainer : MonoBehaviour {
     {
     }
 
-    public IEnumerator say(string text, float delay, GameObject speaker){
+
+    public void sayText(string text, float delay, GameObject speaker){
+        StartCoroutine(say("", 0.1f, speaker));
+        StartCoroutine(say(text, 0.1f, speaker));
+        StartCoroutine(say("", delay, speaker));
+    
+    }
+
+    // нужно до сказать пустую строку еще!
+    IEnumerator say(string text, float delay, GameObject speaker){
         _delay += delay;
 
+        //float thisDelay = _delay;
+
         //if (!string.IsNullOrEmpty(text))
-        //{
-        //    say("", 0.1f, speaker);
+       // {
+       //     StartCoroutine(say("", 0.1f, speaker));
         //}
 
+        //yield return new WaitForSeconds(thisDelay);
         yield return new WaitForSeconds(_delay);
         Game.Instance.getManager().Speak(text, 0, speaker);
     }
+
+
 
     public IEnumerator changeBrotherState(BrotherController.State state, float delay){
         _delay += delay;
