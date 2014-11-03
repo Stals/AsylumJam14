@@ -42,6 +42,9 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     public GameObject effectsController;
 
+    [SerializeField]
+    public GameObject father;
+
 	//[SerializeField]
 	//GameOverController gameOverController;
     
