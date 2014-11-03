@@ -30,6 +30,8 @@ public class Tile4BrotherTrigger : Activatable {
             if (Input.GetKeyDown(KeyCode.Tab)) 
             {
                 StartCoroutine(tile.endCutscene(0.1f));
+                Game.Instance.setControlsEnabled(true);
+                Game.Instance.getManager().setBordersVisible(false);
                 Game.Instance.getManager().setLetGoHintVisible(false);
                 // двигаем брата
                 // hide text to press button
@@ -45,11 +47,12 @@ public class Tile4BrotherTrigger : Activatable {
 
         tile.startCutscene(0);
 
-        tile.sayText("monsters", 0.5f, brother);
-        tile.sayText("me stay=)", 0.5f, brother);
-        tile.sayText("ok", 1f, player);
-        tile.sayText("lets separate", 0.1f, player);
-
+        tile.sayText("No! They gonna kill us! ", 0.5f, brother);
+        tile.sayText("I can’t go farther", 0.5f, brother);
+        tile.sayText("We need to get out of this creepy forest.", 1.5f, player);
+        tile.sayText("Stay here, I’ll trying to do something", 1.5f, player);
+        tile.sayText("No. Don’t leave me!", 1f, brother);
+        tile.sayText("I’ll be right there", 1.5f, player);
 
         Game.Instance.setReachedHandsAbility(true);
         Game.Instance.setHandsChangeEnabled(true);
