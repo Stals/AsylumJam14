@@ -28,7 +28,9 @@ public class ObjectDisabler : Activatable {
     override protected void activate(){
         if (objectToDisable)
         {
-            objectToDisable.SetActive(resultActive);
+            if(objectToDisable){
+                objectToDisable.SetActive(resultActive);
+            }
             if(bg && bgChanged){
                 bg.sprite = bgChanged;
             }
