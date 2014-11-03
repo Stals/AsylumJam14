@@ -52,8 +52,11 @@ public class NotABrotherTrigger : Activatable {
         tile.sayText("sister?", 0.3f, brotherVoice);
 
         StartCoroutine(tile.changeImage(1.5f, fakeBrother, witchSprite));
+        StartCoroutine(tile.playSound(0.01f, audio));
 
         StartCoroutine(tile.teleportPlayerAndChangeTile(2f, tile8, teleportLocation));
+
+        //audio. Play();
 
         // TODO do this with CD
         /*player.transform.parent = tile8.transform;

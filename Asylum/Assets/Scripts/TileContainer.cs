@@ -3,7 +3,7 @@ using System.Collections;
 
 public class TileContainer : MonoBehaviour {
 
-
+    [SerializeField]
     float _delay = 0;
 	// Use this for initialization
 	void Start () {
@@ -31,10 +31,10 @@ public class TileContainer : MonoBehaviour {
 
 
     public void sayText(string text, float delay, GameObject speaker){
-        //StartCoroutine(say("", 0.1f, speaker));
-        //StartCoroutine(say(text, 0.1f, speaker));
-        //StartCoroutine(say("", delay, speaker));
-        StartCoroutine(say("", 0.01f, speaker));
+        StartCoroutine(say("", 0.1f, speaker));
+        StartCoroutine(say(text, 0.1f, speaker));
+        StartCoroutine(say("", delay, speaker));
+        //StartCoroutine(say("", 0.01f, speaker));
     
     }
 
@@ -109,5 +109,13 @@ public class TileContainer : MonoBehaviour {
         yield return new WaitForSeconds(_delay);
 
         renderer.sprite = sprite;
+    }
+
+    public IEnumerator playSound(float delay, AudioSource source){
+        _delay += delay;
+        
+        yield return new WaitForSeconds(_delay);
+        
+        source.Play();
     }
 }
