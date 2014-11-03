@@ -17,12 +17,17 @@ public class Tile9Controller : TileContainer {
 
     public override void tileEntered()
     {
-        /*
-if(fatherGood){
-    братик говорит что нашелся
-    
-}
-         */
+        if (!Game.Instance.BadFather)
+        {
+            GameObject player = Game.Instance.getManager().player;
+            GameObject brother = Game.Instance.getManager().brother;
+
+            sayText("i thought i lost you", 1f, brother);
+            sayText("all ok", 1f, player);
+
+    // i thought i lost you
+        }
+
     }
     
     public override void darkWorldEntered()
