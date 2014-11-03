@@ -145,6 +145,8 @@ public class WalkingPlayerController : MonoBehaviour {
     public bool lookingAtFather = false;
     public bool lookingAtBrother = false;
 
+    bool stepsOn = false;
+
     [SerializeField]
     SpriteRenderer lightCircleLight;
 
@@ -192,9 +194,19 @@ public class WalkingPlayerController : MonoBehaviour {
     void FixedUpdate()
     {
         currentPosition = this.transform.position;
+        stepsOn = false;
+
         if (Game.Instance.isControlsEnabled())
         {
             updateMovment();
+        }
+
+        if (stepsOn)
+        {
+            audio.enabled = true;
+        } else
+        {
+            audio.enabled = false;
         }
     }
 
@@ -213,8 +225,7 @@ public class WalkingPlayerController : MonoBehaviour {
 //        PlayerContoller playerController = Game.Instance.getPlayerShip().GetComponent<PlayerContoller>();
 
         Vector3 v = new Vector3(0f, 0f);
-
-        bool stepsOn = false;
+       
 
         if (Input.GetKey (moveUp)) 
         {
@@ -237,13 +248,7 @@ public class WalkingPlayerController : MonoBehaviour {
             stepsOn = true;
         }
 
-        if (stepsOn)
-        {
-            audio.enabled = true;
-        } else
-        {
-            audio.enabled = false;
-        }
+
 
         lastV = v;
         
