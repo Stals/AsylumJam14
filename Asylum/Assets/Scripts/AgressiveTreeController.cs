@@ -118,6 +118,7 @@ public class AgressiveTreeController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        currentCounter = (int) (Random.value * (waitTime * 60.0f));
         outSpeed = outSize / outTime / FPSfloat;
         inSpeed = outSize / inTime / FPSfloat;
         startX = transform.localPosition.x;
