@@ -10,7 +10,9 @@ public class ExitController : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-	
+        Color color = renderer.material.color;
+        color.a = 0f;
+        renderer.material.color = color;
 	}
 	
 	// Update is called once per frame
