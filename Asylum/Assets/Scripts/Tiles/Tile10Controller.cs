@@ -26,17 +26,25 @@ public class Tile10Controller : TileContainer {
         if (Game.Instance.BadFather == false)
         {
             StartCoroutine(startCutscene(1f));
-            sayText("father", 1f, brother);
-            sayText("my children", 2f, father.gameObject);
+            sayText("Daddy!", 1f, brother);
+            sayText("Son! You’re alive!", 2f, father.gameObject);
 
             //мелкий куда-то
             StartCoroutine(changeBrotherState(new BrotherController.RunningToFather(), 0.1f));
+
+            sayText("You hoped we were dead?", 1f, player);
+            sayText("Bag of gold! Daddy, is it yours?", 1f, brother);
+
+            sayText("We know the truth, dad", 1f, player);
+
+            sayText("You’re tired sweetie", 1f, father.gameObject);
+            sayText("come and hug your beloved father", 1f, father.gameObject);
 
 
             //папа начинает идти на нас
             // TODO after Delay
 
-            startChaise(1f, father);
+            StartCoroutine(startChaise(1f, father));
 
             player.GetComponent<WalkingPlayerController>().lookingAtFather = true;
 
@@ -49,8 +57,10 @@ public class Tile10Controller : TileContainer {
         if (Game.Instance.FatherKilled)
         {
             StartCoroutine(startCutscene(1f));
-            sayText("where is father", 2f, brother);
-            sayText("he will catch up", 1f, player);
+            sayText("where is our daddy?", 2f, brother);
+            sayText("Hold my hand", 1f, player);
+            sayText("All is gonna be allright", 1f, player);
+
             StartCoroutine(endCutscene(0f));
 
             // GAME OVER
