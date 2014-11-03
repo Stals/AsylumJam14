@@ -193,7 +193,7 @@ public class WalkingPlayerController : MonoBehaviour {
             GetComponent<AudioSource>().Play();
         } else
         {
-
+            GetComponent<AudioSource>().Pause();
         }
 
         lastV = v;
