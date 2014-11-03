@@ -99,6 +99,7 @@ public class WalkingPlayerController : MonoBehaviour {
     State currentBrotherState;
 
     public bool lookingAtFather = false;
+    public bool lookingAtBrother = false;
 
     [SerializeField]
     SpriteRenderer lightCircleLight;
@@ -120,6 +121,8 @@ public class WalkingPlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         currentBrotherState = new WithBrother();
+        lookingAtFather = false;
+        lookingAtBrother = false;
 	}
 	
 	// Update is called once per frame
@@ -132,6 +135,12 @@ public class WalkingPlayerController : MonoBehaviour {
         if (lookingAtFather)
         {
             Vector3 v = Game.Instance.getManager().father.transform.position - transform.position;
+            turnTo(v);
+        }
+
+        if (lookingAtBrother)
+        {
+            Vector3 v = Game.Instance.getManager().brother.transform.position - transform.position;
             turnTo(v);
         }
 	}
@@ -177,7 +186,7 @@ public class WalkingPlayerController : MonoBehaviour {
         
         this.transform.position  =  new Vector3(currentPosition.x + v.x, currentPosition.y + v.y);
 
-        if (!lookingAtFather)
+        if ((!lookingAtFather) && (!lookingAtBrother))
         {
             turnTo(v);
         }
