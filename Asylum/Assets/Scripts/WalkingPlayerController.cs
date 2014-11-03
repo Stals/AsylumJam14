@@ -190,10 +190,10 @@ public class WalkingPlayerController : MonoBehaviour {
 
         if (stepsOn)
         {
-            GetComponent<AudioSource>().PlayDelayed(0.5f);
+            audio.enabled = true;
         } else
         {
-            GetComponent<AudioSource>().Pause();
+            audio.enabled = false;
         }
 
         lastV = v;
