@@ -1391,6 +1391,7 @@ Transform:
   - {fileID: 1513720837}
   - {fileID: 117444334}
   - {fileID: 1018283869}
+  - {fileID: 380609387}
   m_Father: {fileID: 0}
   m_RootOrder: 12
 --- !u!114 &249539231
@@ -1822,7 +1823,7 @@ GameObject:
   - 4: {fileID: 380609387}
   - 212: {fileID: 380609386}
   m_Layer: 0
-  m_Name: brother
+  m_Name: fake_brother
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1847,7 +1848,7 @@ SpriteRenderer:
   m_LightProbeAnchor: {fileID: 0}
   m_ScaleInLightmap: 1
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 38
   m_Sprite: {fileID: 21300000, guid: 2db0c31bcf1d747888884f089767da7e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
 --- !u!4 &380609387
@@ -1857,11 +1858,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 380609384}
   m_LocalRotation: {x: 0, y: 0, z: -.707106829, w: .707106709}
-  m_LocalPosition: {x: 36.8001595, y: 9.76463318, z: 0}
+  m_LocalPosition: {x: .155834198, y: .180381775, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 249539230}
+  m_RootOrder: 5
 --- !u!1001 &381192480
 Prefab:
   m_ObjectHideFlags: 0
@@ -7189,11 +7190,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 20107fda9e57748dba6d209a40b24247, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPressable: 1
+  isPressable: 0
   isOnce: 1
   brotherVoice: {fileID: 117444333}
   teleportLocation: {fileID: 165334736}
   tile8: {fileID: 176505078}
+  fakeBrother: {fileID: 380609386}
+  witchSprite: {fileID: 21300000, guid: 3c0f284b98ebf4c91acf98c0e70049f2, type: 3}
 --- !u!50 &1513720839
 Rigidbody2D:
   m_ObjectHideFlags: 0
@@ -7218,7 +7221,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Radius: 1.28999996
+  m_Radius: .99000001
   m_Center: {x: 0, y: 0}
 --- !u!1 &1529149373
 GameObject:
@@ -7986,7 +7989,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
 --- !u!1 &1746136142
 GameObject:
   m_ObjectHideFlags: 0
