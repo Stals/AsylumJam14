@@ -14,6 +14,7 @@ public class WalkingPlayerController : MonoBehaviour {
         virtual public void TurnToWithBrother(WalkingPlayerController me)
         {}
 
+
     }
     
     public class WithBrother : State
@@ -24,6 +25,8 @@ public class WalkingPlayerController : MonoBehaviour {
             {
                 TurnToAlone(me);
             }
+
+            turnEffectsOffOnLastTile(me);
         }
 
         override public void TurnToAlone(WalkingPlayerController me)
@@ -37,6 +40,19 @@ public class WalkingPlayerController : MonoBehaviour {
             Game.Instance.getManager().particlesHorror.SetActive(true);
             Game.Instance.getManager().particlesBlack.SetActive(false);
             
+        }
+
+        public void turnEffectsOffOnLastTile(WalkingPlayerController me)
+        {
+            if (me.isInForestTile())
+            {
+                Game.Instance.getManager().particlesHorror.SetActive(false);
+                Game.Instance.getManager().particlesBlack.SetActive(false);
+            } else
+            {
+                Game.Instance.getManager().particlesHorror.SetActive(true);
+                Game.Instance.getManager().particlesBlack.SetActive(false);
+            }
         }
     }
     
@@ -64,6 +80,8 @@ public class WalkingPlayerController : MonoBehaviour {
             }else{
                 Game.Instance.getManager().setHoldHintVisible(false);
             }
+
+            turnEffectsOffOnLastTile(me);
         }
 
         override public void TurnToWithBrother(WalkingPlayerController me)
@@ -77,6 +95,20 @@ public class WalkingPlayerController : MonoBehaviour {
                 Game.Instance.getManager().particlesHorror.SetActive(false);
                 Game.Instance.getManager().particlesBlack.SetActive(true);
             
+        }
+
+        
+        public void turnEffectsOffOnLastTile(WalkingPlayerController me)
+        {
+            if (me.isInForestTile())
+            {
+                Game.Instance.getManager().particlesHorror.SetActive(false);
+                Game.Instance.getManager().particlesBlack.SetActive(false);
+            } else
+            {
+                Game.Instance.getManager().particlesHorror.SetActive(false);
+                Game.Instance.getManager().particlesBlack.SetActive(true);
+            }
         }
     
         
