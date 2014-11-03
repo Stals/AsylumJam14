@@ -21,6 +21,12 @@ public class NotABrotherTrigger : Activatable {
     [SerializeField]
     TileContainer tile8;
 
+    [SerializeField]
+    SpriteRenderer fakeBrother;
+
+    [SerializeField]
+    Sprite witchSprite;
+
     GameObject player;
     GameObject brother;
     TileContainer tile;
@@ -45,12 +51,14 @@ public class NotABrotherTrigger : Activatable {
         tile.startCutscene(0);
         tile.sayText("sister?", 1f, brotherVoice);
 
+        StartCoroutine(tile.teleportPlayerAndChangeTile(2f, tile8, teleportLocation));
+
         // TODO do this with CD
-        player.transform.parent = tile8.transform;
+        /*player.transform.parent = tile8.transform;
         player.transform.position = teleportLocation.transform.position;
         
         tile8.moveCamera();
-        tile8.tileEntered();
+        tile8.tileEntered();*/
         
         // show witch
         //if(bg && bgChanged){

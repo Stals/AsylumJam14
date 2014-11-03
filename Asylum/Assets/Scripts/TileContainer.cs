@@ -31,9 +31,10 @@ public class TileContainer : MonoBehaviour {
 
 
     public void sayText(string text, float delay, GameObject speaker){
-        StartCoroutine(say("", 0.1f, speaker));
-        StartCoroutine(say(text, 0.1f, speaker));
-        StartCoroutine(say("", delay, speaker));
+        //StartCoroutine(say("", 0.1f, speaker));
+        //StartCoroutine(say(text, 0.1f, speaker));
+        //StartCoroutine(say("", delay, speaker));
+        StartCoroutine(say("", 0.01f, speaker));
     
     }
 
@@ -87,6 +88,19 @@ public class TileContainer : MonoBehaviour {
         // hide borders
         Game.Instance.getManager().setBordersVisible(false);
         Game.Instance.setHandsChangeEnabled(true);
+    }
+
+    public IEnumerator teleportPlayerAndChangeTile(float delay, TileContainer tile, GameObject teleportTarget){
+        _delay += delay;
+        
+        yield return new WaitForSeconds(_delay);
+
+        GameObject player = Game.Instance.getManager().player;;
+        player.transform.parent = tile.transform;
+        player.transform.position = teleportTarget.transform.position;
+        
+        tile.moveCamera();
+        tile.tileEntered();
     }
 
 }
