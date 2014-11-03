@@ -23,6 +23,8 @@ public class Game  {
     bool handsChangeEnabled;
     bool reachedHandsAbility;
     bool isHorrorNight = false;
+    bool isFatherKilled = false;
+    bool isBadFather = false;
 
     public bool HorrorNight
     {
@@ -30,8 +32,19 @@ public class Game  {
         set {isHorrorNight = value;}
     }
 
+    public bool FatherKilled
+    {
+        get {return isFatherKilled;}
+        set {isFatherKilled = value;}
+    }
 
-	public void init(GameManager _manager)
+    public bool BadFather
+    {
+        get {return isBadFather;}
+        set {isBadFather = value;}
+    }
+    
+    public void init(GameManager _manager)
 	{
 		manager = _manager;
         controlsEnabled = true;
