@@ -15,7 +15,10 @@ public class FatherBehavior : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-
+        if (chasingDaughter)
+        {
+            ChasePlayer();
+        }
 	}
 
     public void ChasePlayer()

@@ -164,22 +164,36 @@ public class WalkingPlayerController : MonoBehaviour {
 //        PlayerContoller playerController = Game.Instance.getPlayerShip().GetComponent<PlayerContoller>();
 
         Vector3 v = new Vector3(0f, 0f);
-        
+
+        bool stepsOn = false;
+
         if (Input.GetKey (moveUp)) 
         {
             v.y += speed.y;
+            stepsOn = true;
         }
         if (Input.GetKey (moveDown)) 
         {
             v.y -= speed.y;
+            stepsOn = true;
         }
         if (Input.GetKey(moveLeft))
         {
             v.x -= speed.x;
+            stepsOn = true;
         }
         if (Input.GetKey(moveRight))
         {
             v.x += speed.x;
+            stepsOn = true;
+        }
+
+        if (stepsOn)
+        {
+            GetComponent<AudioSource>().Play();
+        } else
+        {
+
         }
 
         lastV = v;
