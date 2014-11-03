@@ -12,6 +12,9 @@ public class ObjectDisabler : Activatable {
     [SerializeField]
     Sprite bgChanged;
 
+    [SerializeField]
+    bool resultActive = false;
+
 	// Use this for initialization
 	void Start () {
         init();
@@ -25,7 +28,7 @@ public class ObjectDisabler : Activatable {
     override protected void activate(){
         if (objectToDisable)
         {
-            objectToDisable.SetActive(false);
+            objectToDisable.SetActive(resultActive);
             if(bg && bgChanged){
                 bg.sprite = bgChanged;
             }
