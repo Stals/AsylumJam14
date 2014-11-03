@@ -21,6 +21,7 @@ public class Activatable : MonoBehaviour {
 
     protected void init()
     {
+       
         Vector2 currentPosition = transform.position;
         img = (GameObject)(Instantiate(Game.Instance.getManager().activatableImagePrefab,
                                                   new Vector3(currentPosition.x,
@@ -28,6 +29,11 @@ public class Activatable : MonoBehaviour {
                     0), transform.rotation));
 
         setImageOpactiy(0.5f);
+
+        if (!isPressable)
+        {
+            img.SetActive(false);
+        }
     }
 	
 	// Update is called once per frame
