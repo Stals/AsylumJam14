@@ -123,4 +123,11 @@ public class TileContainer : MonoBehaviour {
         
         source.Play();
     }
+
+    public IEnumerator startChaise(float delay, FatherBehavior father){
+        _delay += delay;
+        
+        yield return new WaitForSeconds(_delay);
+        father.chasingDaughter = true;
+    }
 }

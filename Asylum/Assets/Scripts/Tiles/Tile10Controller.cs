@@ -33,7 +33,8 @@ public class Tile10Controller : TileContainer {
 
             //папа начинает идти на нас
             // TODO after Delay
-            father.chasingDaughter = true;
+
+            startChaise(1f, father);
 
             player.GetComponent<WalkingPlayerController>().lookingAtFather = true;
 
