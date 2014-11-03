@@ -37,10 +37,10 @@ public class GameManager : MonoBehaviour {
     GameObject useItemHint;
 
     [SerializeField]
-    public GameObject particles;
+    public GameObject particlesHorror;
 
     [SerializeField]
-    public GameObject effectsController;
+    public GameObject particlesBlack;
 
     [SerializeField]
     public GameObject father;
