@@ -49,7 +49,9 @@ public class NotABrotherTrigger : Activatable {
     override protected void activate(){
         // brother voice
         tile.startCutscene(0);
-        tile.sayText("sister?", 1f, brotherVoice);
+        tile.sayText("sister?", 0.3f, brotherVoice);
+
+        StartCoroutine(tile.changeImage(1.5f, fakeBrother, witchSprite));
 
         StartCoroutine(tile.teleportPlayerAndChangeTile(2f, tile8, teleportLocation));
 

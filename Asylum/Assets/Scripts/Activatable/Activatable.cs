@@ -32,8 +32,8 @@ public class Activatable : MonoBehaviour {
 	
 	// Update is called once per frame
 	void FixedUpdate () {
-        bool hintVisible = (isPressable) && ((!isOnce) || (isOnce && (!wasActivated)));
-        Game.Instance.getManager().setUseItemHintVisible(isTriggered);
+        //bool hintVisible = (isPressable) && ((!isOnce) || (isOnce && (!wasActivated)));
+        //Game.Instance.getManager().setUseItemHintVisible(isTriggered);
 
         if (wasActivated)
         {

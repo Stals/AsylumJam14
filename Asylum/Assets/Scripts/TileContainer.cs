@@ -103,4 +103,11 @@ public class TileContainer : MonoBehaviour {
         tile.tileEntered();
     }
 
+    public IEnumerator changeImage(float delay, SpriteRenderer renderer, Sprite sprite){
+        _delay += delay;
+        
+        yield return new WaitForSeconds(_delay);
+
+        renderer.sprite = sprite;
+    }
 }
