@@ -72,7 +72,7 @@ public class GameManager : MonoBehaviour {
 	
     void FixedUpdate()
     {
-        if (Game.Instance.HorrorNight)
+        if (Game.Instance.HorrorNight && player.GetComponent<WalkingPlayerController>().isInForestTile())
         {
             // добавить base туда - и при смене локации менять 
             shake();

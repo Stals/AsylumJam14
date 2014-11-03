@@ -52,10 +52,23 @@ public class BrotherController : MonoBehaviour {
         }
     }
 
-    class RunningToFather : State
+    public class RunningToFather : State
     {
+        Vector3 target = new Vector3(75.65525f, 9.166532f, 0);
+        public float speed = 3f;
+        
         override public void Update(BrotherController me)
         {
+            if (Vector3.Distance(me.transform.position, target) > 0.5f)
+            {//move if distance from target is greater than 1
+                me.transform.Translate(new Vector3(speed * Time.deltaTime, 0, 0));
+            } else
+            {
+                me.setState(new Normal());
+            }
+            
+            me.transform.LookAt(target);
+            me.transform.Rotate(new Vector3(0,-90,0), Space.Self);//correcting the original rotation
         }
     }
 

@@ -26,8 +26,11 @@ public class Tile10Controller : TileContainer {
         if (Game.Instance.BadFather == false)
         {
             StartCoroutine(startCutscene(1f));
-            sayText("my children", 2f, father.gameObject);
             sayText("father", 1f, brother);
+            sayText("my children", 2f, father.gameObject);
+
+            StartCoroutine(changeBrotherState(new BrotherController.RunningToFather(), 0.1f));
+
             //мелкий к папе
             //???
 
