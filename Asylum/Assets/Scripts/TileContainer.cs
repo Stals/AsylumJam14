@@ -29,6 +29,11 @@ public class TileContainer : MonoBehaviour {
     {
     }
 
+    public virtual bool isForest()
+    {
+        return true;
+    }
+
 
     public void sayText(string text, float delay, GameObject speaker){
         StartCoroutine(say("", 0.1f, speaker));

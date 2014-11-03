@@ -36,4 +36,9 @@ if(papa dead)
     {
 
     }
+
+    public override bool isForest()
+    {
+        return false;
+    }
 }

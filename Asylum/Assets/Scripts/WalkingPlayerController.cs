@@ -159,6 +159,11 @@ public class WalkingPlayerController : MonoBehaviour {
         return transform.parent.GetComponent<TileContainer>();
     }
 
+    public bool isInForestTile()
+    {
+        return getCurrentTile().isForest();
+    }
+    
     void updateMovment()
     {
 //        PlayerContoller playerController = Game.Instance.getPlayerShip().GetComponent<PlayerContoller>();
@@ -228,6 +233,8 @@ public class WalkingPlayerController : MonoBehaviour {
     {
         Debug.LogError("DEATH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
     }
+
+
 
     public void LetGoOfBrother()
     {
