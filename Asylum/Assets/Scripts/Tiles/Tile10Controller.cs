@@ -29,10 +29,9 @@ public class Tile10Controller : TileContainer {
             sayText("father", 1f, brother);
             sayText("my children", 2f, father.gameObject);
 
+            //мелкий куда-то
             StartCoroutine(changeBrotherState(new BrotherController.RunningToFather(), 0.1f));
 
-            //мелкий к папе
-            //???
 
             //папа начинает идти на нас
             // TODO after Delay
@@ -52,6 +51,9 @@ public class Tile10Controller : TileContainer {
             StartCoroutine(startCutscene(1f));
             sayText("where is father", 2f, brother);
             sayText("he will catch up", 1f, player);
+            StartCoroutine(endCutscene(0f));
+
+            // GAME OVER
         }
 
 

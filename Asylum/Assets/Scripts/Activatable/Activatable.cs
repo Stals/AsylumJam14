@@ -12,7 +12,7 @@ public class Activatable : MonoBehaviour {
     bool isTriggered = false;
     GameObject img;
 
-    bool wasActivated = false;
+    protected bool wasActivated = false;
 
 	// Use this for initialization
 	void Start () {
