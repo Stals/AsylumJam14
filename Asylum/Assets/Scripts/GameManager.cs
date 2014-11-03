@@ -34,6 +34,9 @@ public class GameManager : MonoBehaviour {
     GameObject holdHandHint;
 
     [SerializeField]
+    GameObject useItemHint;
+
+    [SerializeField]
     public GameObject particles;
 
     [SerializeField]
@@ -109,6 +112,11 @@ public class GameManager : MonoBehaviour {
     public void setHoldHintVisible(bool visible)
     {
         holdHandHint.SetActive(visible);
+    }
+
+    public void setUseItemHintVisible(bool visible)
+    {
+        useItemHint.SetActive(visible);
     }
 
     public void shake()
