@@ -96,7 +96,7 @@ public class WalkingPlayerController : MonoBehaviour {
 
     State currentBrotherState;
 
-    bool lookingAtFather = false;
+    public bool lookingAtFather = false;
 
     [SerializeField]
     SpriteRenderer lightCircleLight;
