@@ -52,7 +52,8 @@ public class WalkingPlayerController : MonoBehaviour {
             me.CurrentBrotherState = new Alone();
             Game.Instance.getManager().brother.GetComponent<Rigidbody2D>().isKinematic = true;
             HorrorState(me);
-            
+
+            me.getCurrentTile().darkWorldEntered();
         }
 
         public void turnEffectsOffOnLastTile(WalkingPlayerController me)

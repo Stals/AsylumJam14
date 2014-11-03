@@ -39,6 +39,7 @@ public class KillFatherActivatable : Activatable {
             }
 
             Game.Instance.FatherKilled = true;
+            Game.Instance.getManager().player.GetComponent<WalkingPlayerController>().lookingAtFather = false;
 
         } else
         {
