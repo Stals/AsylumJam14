@@ -5,6 +5,9 @@ public class Tile9Controller : TileContainer {
 
     bool showedNormalDialog = false;
 
+    [SerializeField]
+    GameObject fatherTeleportLocation;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -28,6 +31,9 @@ public class Tile9Controller : TileContainer {
 /*
 inside activate - look at father = false
              */
+        } else
+        {
+            Game.Instance.getManager().father.transform.position = fatherTeleportLocation.transform.position;
         }
 
     }
