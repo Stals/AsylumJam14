@@ -49,8 +49,10 @@ public class Tile4BrotherTrigger : Activatable {
 
         tile.sayText("No! They gonna kill us! ", 1f, brother);
         tile.sayText("I can’t go farther", 1f, brother);
-        tile.sayText("We need to get out of this creepy forest.", 2.5f, player);
-        tile.sayText("Stay here, I’ll trying to do something", 2.5f, player);
+        tile.sayText("But we need to", 1f, player);
+        tile.sayText("get out of this creepy forest.", 1.5f, player);
+        tile.sayText("Stay here", 1f, player);
+        tile.sayText("I’ll trying to do something", 1.5f, player);
         tile.sayText("No. Don’t leave me!", 1.5f, brother);
         tile.sayText("I’ll be right there", 1.5f, player);
 

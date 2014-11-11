@@ -59,7 +59,9 @@ public class Tile10Controller : TileContainer {
             StartCoroutine(startCutscene(1f));
             sayText("Where is our daddy?", 2f, brother);
             sayText("Hold my hand", 2f, player);
-            sayText("Everything is going to be alright", 2f, player);
+            sayText("Everything", 0.75f, player);
+            sayText("is going to be alright", 1.5f, player);
+
             StartCoroutine(endGame(1f));
 
 

@@ -50,7 +50,7 @@ public class NotABrotherTrigger : Activatable {
         // brother voice
         tile.startCutscene(0);
         tile.sayText("I’m scared", 0.75f, brotherVoice);
-        tile.sayText("where are you?!", 0.75f, brotherVoice);
+        tile.sayText("Where are you", 0.75f, brotherVoice);
 
         StartCoroutine(tile.changeImage(1f, fakeBrother, witchSprite));
         StartCoroutine(tile.playSound(0.01f, audio));
