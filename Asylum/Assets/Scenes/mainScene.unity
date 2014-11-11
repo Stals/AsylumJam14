@@ -10287,7 +10287,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 3a8b0396d20804e529e3f27de54cb713, type: 2}
       propertyPath: mWidth
-      value: 10
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 3a8b0396d20804e529e3f27de54cb713, type: 2}
       propertyPath: mOverflow
@@ -10295,7 +10295,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11400000, guid: 3a8b0396d20804e529e3f27de54cb713, type: 2}
       propertyPath: aspectRatio
-      value: .266666681
+      value: .533333361
       objectReference: {fileID: 0}
     - target: {fileID: 11400028, guid: 3a8b0396d20804e529e3f27de54cb713, type: 2}
       propertyPath: mDepth
@@ -10312,7 +10312,8 @@ Prefab:
     - target: {fileID: 11400000, guid: 3a8b0396d20804e529e3f27de54cb713, type: 2}
       propertyPath: mTrueTypeFont
       value: 
-      objectReference: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+      objectReference: {fileID: 12800000, guid: a1288dccb57514670bce6c826d70e3eb,
+        type: 3}
     - target: {fileID: 11400000, guid: 3a8b0396d20804e529e3f27de54cb713, type: 2}
       propertyPath: mFont
       value: 
@@ -10885,15 +10886,15 @@ MonoBehaviour:
   updateAnchors: 1
   mColor: {r: 1, g: 1, b: 1, a: 1}
   mPivot: 4
-  mWidth: 10
+  mWidth: 16
   mHeight: 30
   mDepth: 0
   autoResizeBoxCollider: 0
   hideIfOffScreen: 0
   keepAspectRatio: 0
-  aspectRatio: .333333343
+  aspectRatio: .533333361
   keepCrispWhenShrunk: 1
-  mTrueTypeFont: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+  mTrueTypeFont: {fileID: 12800000, guid: a1288dccb57514670bce6c826d70e3eb, type: 3}
   mFont: {fileID: 0}
   mText: 
   mFontSize: 30
