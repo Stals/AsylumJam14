@@ -27,9 +27,9 @@ public class Tile2MonterEnabler : Activatable {
 
         TileContainer tile = player.GetComponent<WalkingPlayerController>().getCurrentTile();
 
-        tile.sayText("What is this?!", 0.5f, brother);
-        tile.sayText("Hush, they can hear us", 1f, player);
-        tile.sayText("so be quiet", 1f, player);
+        tile.sayText("What is this?!", 1f, brother);
+        tile.sayText("Hush, they can hear us", 2f, player);
+        tile.sayText("be quiet", 2f, player);
         StartCoroutine(tile.endCutscene(0f));
     }
 }

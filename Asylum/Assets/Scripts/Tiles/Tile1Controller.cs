@@ -25,11 +25,11 @@ public class Tile1Controller : TileContainer {
             GameObject brother = Game.Instance.getManager().brother;
 
             StartCoroutine(startCutscene(0));
-            sayText("I’m scared", 0.5f, brother);
+            sayText("I’m scared", 1f, brother);
             sayText("Daddy asked us to collect twigs", 2f, player);
             sayText("There is a witch deep in the forest", 2f, brother);
             sayText("I've heard that she eats children", 2f, brother);
-            sayText("Ok let’s go back to our father", 2f, player);
+            sayText("OK let’s go back to our father", 2f, player);
             StartCoroutine(endCutscene(0f));
         }
     }

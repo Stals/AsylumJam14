@@ -32,13 +32,13 @@ public class Tile10Controller : TileContainer {
             //мелкий куда-то
             StartCoroutine(changeBrotherState(new BrotherController.RunningToFather(), 0.1f));
 
-            sayText("You hoped we were dead?", 1f, player);
-            sayText("Bag of gold! Daddy, is it yours?", 1f, brother);
+            sayText("You hoped we were dead?", 2f, player);
+            sayText("Bag of gold! Daddy, is it yours?", 3f, brother);
 
-            sayText("We know the truth, dad", 1f, player);
+            sayText("We know the truth, dad", 2f, player);
 
-            sayText("You’re tired sweetie", 1f, father.gameObject);
-            sayText("come and hug your beloved father", 1f, father.gameObject);
+            sayText("You’re tired sweetie", 1.5f, father.gameObject);
+            sayText("come and hug your beloved father", 3f, father.gameObject);
 
 
             //папа начинает идти на нас
@@ -58,8 +58,8 @@ public class Tile10Controller : TileContainer {
         {
             StartCoroutine(startCutscene(1f));
             sayText("Where is our daddy?", 2f, brother);
-            sayText("Hold my hand", 1f, player);
-            sayText("Everything is going to be alright", 1f, player);
+            sayText("Hold my hand", 2f, player);
+            sayText("Everything is going to be alright", 2f, player);
             StartCoroutine(endGame(1f));
 
 
