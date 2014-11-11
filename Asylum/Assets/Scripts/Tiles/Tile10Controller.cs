@@ -57,9 +57,11 @@ public class Tile10Controller : TileContainer {
         if (Game.Instance.FatherKilled)
         {
             StartCoroutine(startCutscene(1f));
-            sayText("where is our daddy?", 2f, brother);
+            sayText("Where is our daddy?", 2f, brother);
             sayText("Hold my hand", 1f, player);
-            sayText("All is gonna be allright", 1f, player);
+            sayText("Everything is going to be alright", 1f, player);
+            StartCoroutine(endGame(1f));
+
 
             //StartCoroutine(endCutscene(0f));
 

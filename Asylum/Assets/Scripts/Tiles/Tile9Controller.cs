@@ -25,8 +25,8 @@ public class Tile9Controller : TileContainer {
             GameObject player = Game.Instance.getManager().player;
             GameObject brother = Game.Instance.getManager().brother;
 
-            sayText("i thought i lost you", 1f, brother);
-            sayText("all ok", 1f, player);
+            sayText("I thought I lost you", 1f, brother);
+            sayText("Everything is OK", 1f, player);
 
 /*
 inside activate - look at father = false
