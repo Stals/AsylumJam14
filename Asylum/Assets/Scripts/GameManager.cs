@@ -45,6 +45,12 @@ public class GameManager : MonoBehaviour {
     [SerializeField]
     public GameObject father;
 
+    [SerializeField]
+    public GameObject gameCompletedLabel;
+
+    [SerializeField]
+    public GameObject gameCompletedLayer;
+
 	//[SerializeField]
 	//GameOverController gameOverController;
     
@@ -130,5 +136,10 @@ public class GameManager : MonoBehaviour {
     public void stopShake()
     {
         cameraShake.stopShake();
+    }
+
+    public void exitGame()
+    {
+        Application.Quit();
     }
 }

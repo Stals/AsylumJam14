@@ -130,4 +130,14 @@ public class TileContainer : MonoBehaviour {
         yield return new WaitForSeconds(_delay);
         father.chasingDaughter = true;
     }
+
+    public IEnumerator endGame(float delay)
+    {
+        _delay += delay;
+        
+        yield return new WaitForSeconds(_delay);
+
+        Game.Instance.getManager().gameCompletedLabel.SetActive(true);
+        Game.Instance.getManager().gameCompletedLayer.SetActive(true);
+    }
 }
